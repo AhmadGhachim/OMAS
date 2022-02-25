@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,34 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+.header {
+  margin: 0 0 2em;
+  text-align: center;
+}
+
+.header h2 {
+  /* font-weight: 900; */
+  font-size: 6rem;
+  margin: 0;
+  padding: 0;
+}
+
+.meeting-type {
+  text-align: center;
+}
+
+.meeting-type label {
+  font-size: 1.5rem;
+  font-weight: 100;
+  margin-right: 1em;
+}
+
+.meeting-type select {
+  height: fit-content;
+  width: 12%;
+  padding: 1em;
+  border-radius: 5em;
+  outline: none;
 }

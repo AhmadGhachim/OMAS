@@ -1,9 +1,13 @@
 import './App.css';
 import { useState } from 'react';
+import MeetingType from './components/MeetingType';
+import MeetingServiceFile from './components/MeetingServiceFile';
 
 
 function App() {
-  const [selected, setSelected] = useState("zoom")
+
+
+
   return (
     <div className="App">
       <div className="header">
@@ -12,16 +16,10 @@ function App() {
         </h2>
       </div>
 
-      <div className="meeting-type">
-        <form>
-          <label htmlFor="meet-type">Select Meeting Service:</label>
-          <select value={selected} onChange={(e) => setSelected(e.target.value)}>
-            <option value="zoom">Zoom</option>
-            <option value="teams">Teams</option>
-            <option value="webex">Webex</option>
-          </select>
-        </form>
-      </div>
+      <MeetingType />
+
+
+
     </div>
   );
 }

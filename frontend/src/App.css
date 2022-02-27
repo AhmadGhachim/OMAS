@@ -35,9 +35,10 @@ label {
   border: none;
   outline: none;
   font-size: 1.1rem;
-  font-weight: bold;
+  /* font-weight: bold; */
   text-align: center;
   background-color: grey;
+  color: white;
 }
 
 .meeting-documents {

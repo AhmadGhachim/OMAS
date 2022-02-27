@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react'
 
-function MeetingServiceFile() {
+function File({ title }) {
 
       const [filename, setFilename] = useState("");
 
@@ -25,7 +25,7 @@ function MeetingServiceFile() {
       return (
             <div className="file">
                   <form>
-                        <label htmlFor="service-file">Meeting Service File</label>
+                        <label htmlFor="service-file">{title}</label>
 
                         <div className="file-input-btn" onClick={handleClick}>
                               {
@@ -45,4 +45,4 @@ function MeetingServiceFile() {
       )
 }
 
-export default MeetingServiceFile
+export default File

@@ -1,7 +1,7 @@
 import './App.css';
 import { useState } from 'react';
 import MeetingType from './components/MeetingType';
-import MeetingServiceFile from './components/MeetingServiceFile';
+import File from './components/File';
 
 
 function App() {
@@ -19,7 +19,8 @@ function App() {
       <MeetingType />
 
       <div className="meeting-documents">
-        <MeetingServiceFile />
+        <File title="Meeting Service File" />
+        <File title="Student Database File" />
       </div>
 
     </div>

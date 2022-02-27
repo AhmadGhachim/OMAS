@@ -77,6 +77,27 @@ label {
   justify-content: space-between;
 }
 
+.meeting-documents button {
+  background-color: rgb(33, 135, 33);
+  height: fit-content;
+  align-self: center;
+  border: none;
+  outline: none;
+  font-size: 1.2em;
+  color: white;
+  padding: 1em 2em;
+  border-radius: 0.7em;
+  text-transform: uppercase;
+}
+
+.meeting-documents button:hover {
+  background-color: rgb(53, 171, 53);
+}
+
+.meeting-documents button:active {
+  background-color: rgba(33, 135, 33, 0.633);
+}
+
 .file {
   width: 30%;
 }

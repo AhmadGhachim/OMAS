@@ -20,6 +20,7 @@ function App() {
 
       <div className="meeting-documents">
         <File title="Meeting Service File" />
+        <button>Ready!</button>
         <File title="Student Database File" />
       </div>
 

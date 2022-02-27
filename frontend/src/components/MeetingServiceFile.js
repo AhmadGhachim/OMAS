@@ -1,0 +1,48 @@
+import React, { useRef, useState } from 'react'
+
+function MeetingServiceFile() {
+
+      const [filename, setFilename] = useState("");
+
+      const hiddenFileInput = useRef(null);
+
+      const handleClick = (e) => {
+            e.preventDefault();
+            hiddenFileInput.current.click();
+      }
+
+      const handleDelete = (e) => {
+            e.preventDefault();
+            e.target.files = null;
+            setFilename("");
+      }
+
+      const handleFileInputChange = (e) => {
+            const uploadedFile = e.target.files[0];
+            setFilename(uploadedFile.name);
+      }
+
+      return (
+            <div className="file">
+                  <form>
+                        <label htmlFor="service-file">Meeting Service File</label>
+
+                        <div className="file-input-btn" onClick={handleClick}>
+                              {
+                                    filename !== "" &&
+                                    <div className="file-info">
+                                          <p>{filename}</p>
+                                          <button className="cancel-btn" onClick={handleDelete}>X</button>
+                                    </div>
+                              }
+
+                              <p>Click to Upload</p>
+                        </div>
+
+                        <input ref={hiddenFileInput} type="file" id="service-file" style={{ display: "none" }} onChange={handleFileInputChange} />
+                  </form>
+            </div>
+      )
+}
+
+export default MeetingServiceFile

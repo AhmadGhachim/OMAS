@@ -18,7 +18,9 @@ function App() {
 
       <MeetingType />
 
-
+      <div className="meeting-documents">
+        <MeetingServiceFile />
+      </div>
 
     </div>
   );

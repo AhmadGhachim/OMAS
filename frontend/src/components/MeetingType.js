@@ -9,11 +9,14 @@ const MeetingType = () => {
                   <div className="meeting-type">
                         <form>
                               <label htmlFor="meet-type">Select Meeting Service:</label>
-                              <select value={selected} onChange={(e) => setSelected(e.target.value)}>
-                                    <option value="zoom">Zoom</option>
-                                    <option value="teams">Teams</option>
-                                    <option value="webex">Webex</option>
-                              </select>
+                              <span className="select-container">
+                                    <select value={selected} onChange={(e) => setSelected(e.target.value)}>
+                                          <option value="zoom">Zoom</option>
+                                          <option value="teams">Teams</option>
+                                          <option value="webex">Webex</option>
+                                    </select>
+                              </span>
+
                         </form>
                   </div>
             </div>

@@ -23,12 +23,21 @@ label {
   margin-right: 1em;
 }
 
-.meeting-type select {
-  height: fit-content;
-  width: 12%;
+.meeting-type .select-container {
+  background-color: grey;
   padding: 1em;
   border-radius: 5em;
+  height: fit-content;
+}
+
+.meeting-type select {
+  width: 12%;
+  border: none;
   outline: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: center;
+  background-color: grey;
 }
 
 .meeting-documents {

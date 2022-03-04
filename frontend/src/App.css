@@ -12,19 +12,16 @@
 .steps {
   text-align: center;
   list-style-position: inside;
-
 }
 .inside-steps {
   text-align: left;
   margin-left: 35%;
-
 }
 
 .meeting-type {
   text-align: center;
   margin: 1em 0;
 }
-
 
 label {
   font-size: 1.5rem;
@@ -34,7 +31,6 @@ label {
 .meeting-type label {
   margin-right: 1em;
 }
-
 
 .meeting-type .select-container {
   background-color: grey;
@@ -59,10 +55,10 @@ label {
   padding: 1em;
 }
 
-.cut-off label{
+.cut-off label {
   margin-right: 1em;
 }
-.cutoff-input{
+.cutoff-input {
   background-color: grey;
   padding: 1em;
   border-radius: 5em;
@@ -73,7 +69,6 @@ label {
   font-size: 1.1rem;
   text-align: center;
   color: white;
-
 }
 
 .meeting-documents {
@@ -81,7 +76,6 @@ label {
   display: flex;
   justify-content: space-between;
 }
-
 
 .meeting-documents button:hover {
   background-color: rgb(53, 171, 53);
@@ -146,7 +140,7 @@ label {
 }
 
 button {
-  background-color: rgb(33, 135, 33);
+  background-color: #000;
   height: fit-content;
   align-self: center;
   border: none;
@@ -158,14 +152,14 @@ button {
   text-transform: uppercase;
 }
 
-button {
-  font-size: 1.2rem;
+button.ready {
+  background-color: rgb(33, 135, 33);
 }
 
-button:hover {
+button.ready:hover {
   background-color: rgb(53, 171, 53);
 }
 
-button:active {
+button.ready:active {
   background-color: rgba(33, 135, 33, 0.633);
 }

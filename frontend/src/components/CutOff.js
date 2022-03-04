@@ -3,7 +3,7 @@ import InputNumber from 'react-input-number';
 
 const CutOff = () => {
 
-    const [num, setNum] = useState(0);
+    const [num, setNum] = useState(1);
     return (
         <div>
             <div className="cut-off">

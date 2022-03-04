@@ -9,10 +9,22 @@
   padding: 0;
 }
 
+.steps {
+  text-align: center;
+  list-style-position: inside;
+
+}
+.inside-steps {
+  text-align: left;
+  margin-left: 35%;
+
+}
+
 .meeting-type {
   text-align: center;
   margin: 1em 0;
 }
+
 
 label {
   font-size: 1.5rem;
@@ -22,6 +34,7 @@ label {
 .meeting-type label {
   margin-right: 1em;
 }
+
 
 .meeting-type .select-container {
   background-color: grey;
@@ -40,6 +53,28 @@ label {
   background-color: grey;
   color: white;
 }
+.cut-off {
+  text-align: center;
+  margin: 1em 0;
+  padding: 1em;
+}
+
+.cut-off label{
+  margin-right: 1em;
+}
+.cutoff-input{
+  background-color: grey;
+  padding: 1em;
+  border-radius: 5em;
+  height: fit-content;
+  width: 12%;
+  border: none;
+  outline: none;
+  font-size: 1.1rem;
+  text-align: center;
+  color: white;
+
+}
 
 .meeting-documents {
   margin: 3em 3em;
@@ -47,18 +82,6 @@ label {
   justify-content: space-between;
 }
 
-.meeting-documents button {
-  background-color: rgb(33, 135, 33);
-  height: fit-content;
-  align-self: center;
-  border: none;
-  outline: none;
-  font-size: 1.2em;
-  color: white;
-  padding: 1em 2em;
-  border-radius: 0.7em;
-  text-transform: uppercase;
-}
 
 .meeting-documents button:hover {
   background-color: rgb(53, 171, 53);
@@ -115,4 +138,34 @@ label {
   border-radius: 0.5em;
   border: none;
   height: fit-content;
+}
+
+.Process_button {
+  text-align: center;
+  padding: 1em;
+}
+
+button {
+  background-color: rgb(33, 135, 33);
+  height: fit-content;
+  align-self: center;
+  border: none;
+  outline: none;
+  font-size: 1.2em;
+  color: white;
+  padding: 1em 2em;
+  border-radius: 0.7em;
+  text-transform: uppercase;
+}
+
+button {
+  font-size: 1.2rem;
+}
+
+button:hover {
+  background-color: rgb(53, 171, 53);
+}
+
+button:active {
+  background-color: rgba(33, 135, 33, 0.633);
 }

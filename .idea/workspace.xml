@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a31ab06-8605-468e-b66b-8bd913b043b7" name="Changes" comment="Created a Django environment under 'backend'">
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/CutOff.js" afterDir="false" />
+    <list default="true" id="0a31ab06-8605-468e-b66b-8bd913b043b7" name="Changes" comment="Added CutOff.js component and edited thr frontend">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/CutOff.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/CutOff.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +41,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="posi-features" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -105,7 +101,7 @@
       <updated>1645490062645</updated>
       <workItem from="1645490074344" duration="2155000" />
       <workItem from="1645655386133" duration="1417000" />
-      <workItem from="1646351745427" duration="6036000" />
+      <workItem from="1646351745427" duration="6311000" />
     </task>
     <task id="LOCAL-00001" summary="Created a Django environment under 'omas_backend'">
       <created>1645490481639</created>
@@ -121,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645490901740</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added CutOff.js component and edited thr frontend">
+      <created>1646359400250</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1646359400250</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,6 +145,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created a Django environment under 'omas_backend'" />
     <MESSAGE value="Created a Django environment under 'backend'" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created a Django environment under 'backend'" />
+    <MESSAGE value="Added CutOff.js component and edited thr frontend" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added CutOff.js component and edited thr frontend" />
   </component>
 </project>

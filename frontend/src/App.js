@@ -8,8 +8,26 @@ import DisplayedData from './components/DisplayedData';
 
 function App() {
 
-  const [isReady, setIsReady] = useState(true); // state to use to determine if the Process button should be disabled or not.
-  const [isProcessed, setIsProcessed] = useState(false); // state to use to determine if the data has been processed and returned from the backend
+  // state to determine if the Process button should be disabled or not. (boolean value)
+  const [isReady, setIsReady] = useState(true);
+
+  // state to determine if the data has been processed and returned from the backend.(boolen value)
+  const [isProcessed, setIsProcessed] = useState(false);
+
+  // state to store the returned data from the backend. (Array of objects of students)
+  const [outputData, setOutputData] = useState([
+    {
+      name: "Posi Adeyemi",
+      duration: "37:01",
+      attended: "present",
+    },
+
+    {
+      name: "Ahmad Ghachim",
+      duration: "37:01",
+      attended: "present",
+    },
+  ])
 
   const processBtnRef = useRef(null);
 
@@ -74,7 +92,7 @@ function App() {
         <button onClick={handleSubmit} ref={processBtnRef}>{isProcessed ? "Processed" : "Process"}</button>
       </div>
 
-      {isProcessed && <DisplayedData />}
+      {isProcessed && <DisplayedData outputData={outputData} />}
 
     </div>
   );

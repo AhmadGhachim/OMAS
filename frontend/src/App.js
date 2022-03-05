@@ -3,11 +3,12 @@ import { useState, useEffect, useRef } from 'react';
 import MeetingType from './components/MeetingType';
 import File from './components/File';
 import CutOff from "./components/CutOff";
+import DisplayedData from './components/DisplayedData';
 
 
 function App() {
 
-  const [isReady, setIsReady] = useState(false); // state to use to determine if the Process button should be disabled or not.
+  const [isReady, setIsReady] = useState(true); // state to use to determine if the Process button should be disabled or not.
   const [isProcessed, setIsProcessed] = useState(false); // state to use to determine if the data has been processed and returned from the backend
 
   const processBtnRef = useRef(null);
@@ -73,8 +74,7 @@ function App() {
         <button onClick={handleSubmit} ref={processBtnRef}>{isProcessed ? "Processed" : "Process"}</button>
       </div>
 
-
-
+      {isProcessed && <DisplayedData />}
 
     </div>
   );

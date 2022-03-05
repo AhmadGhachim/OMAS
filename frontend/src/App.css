@@ -140,26 +140,80 @@ label {
 }
 
 button {
-  background-color: #000;
-  height: fit-content;
-  align-self: center;
   border: none;
   outline: none;
-  font-size: 1.2em;
-  color: white;
   padding: 1em 2em;
   border-radius: 0.7em;
+  height: fit-content;
+  align-self: center;
+}
+
+.Process_button button {
+  background-color: #000;
+  font-size: 1.2em;
+  color: white;
   text-transform: uppercase;
 }
 
-button.ready {
+.Process_button button.ready {
   background-color: rgb(33, 135, 33);
 }
 
-button.ready:hover {
+.Process_button button.ready:hover {
   background-color: rgb(53, 171, 53);
 }
 
-button.ready:active {
+.Process_button button.ready:active {
   background-color: rgba(33, 135, 33, 0.633);
+}
+
+.displayed-data {
+  margin: 5em 10em;
+}
+
+/* .displayed-data div {
+  margin-bottom: 1em;
+} */
+
+.download-btn {
+  text-align: end;
+  margin-bottom: 1em;
+}
+
+.download-btn button {
+  background-color: rgb(210, 208, 208);
+  color: black;
+}
+
+/* .output-container {
+  display: grid;
+  grid-template-columns: auto;
+  background-color: rgb(172, 172, 172);
+  padding: 0 1em;
+  text-align: center;
+} */
+
+.heading,
+.content {
+  display: grid;
+  /* grid-template-columns: 50% 25% 25%; */
+  grid-template-columns: 34% 33% 33%;
+  background-color: rgb(172, 172, 172);
+  border-bottom: 1px solid grey;
+}
+
+.content {
+  background-color: rgb(210, 208, 208);
+}
+
+.heading-item,
+.content-item {
+  padding: 1em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.heading-item {
+  font-weight: bold;
+  font-size: 1.2rem;
 }

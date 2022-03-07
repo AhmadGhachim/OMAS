@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a31ab06-8605-468e-b66b-8bd913b043b7" name="Changes" comment="Created a Django environment under 'backend'">
-      <change beforePath="$PROJECT_DIR$/.idea/Repo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Repo.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="0a31ab06-8605-468e-b66b-8bd913b043b7" name="Changes" comment="Added FileParser and skeleton for DataProcessor">
+      <change afterPath="$PROJECT_DIR$/backend/DataProcessor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/FileParser.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/Test files/test.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,7 +55,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/backend/backend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/backend" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -63,17 +64,19 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/backend" />
       <recent name="$PROJECT_DIR$/backend/backend" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/backend/Test files" />
+      <recent name="$PROJECT_DIR$/backend" />
+    </key>
   </component>
-  <component name="RunManager" selected="Python.fileParser">
+  <component name="RunManager" selected="Python.FileParser">
     <configuration name="DataProcessor" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Repo" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="/usr/bin/python3" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/backend/backend" />
       <option name="IS_MODULE_SDK" value="false" />
@@ -160,9 +163,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.fileParser" />
         <item itemvalue="Python.FileParser" />
         <item itemvalue="Python.DataProcessor" />
+        <item itemvalue="Python.fileParser" />
       </list>
     </recent_temporary>
   </component>
@@ -190,7 +193,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645490901740</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added FileParser and skeleton for DataProcessor">
+      <created>1646681739251</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1646681739251</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,6 +220,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created a Django environment under 'omas_backend'" />
     <MESSAGE value="Created a Django environment under 'backend'" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created a Django environment under 'backend'" />
+    <MESSAGE value="Added FileParser and skeleton for DataProcessor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added FileParser and skeleton for DataProcessor" />
   </component>
 </project>

@@ -8,8 +8,6 @@ class FileParser(object):
         self.__start_time = None  # str Time of first join of user
         self.__date = None  # str  Date of first join of user
 
-
-
     def parse_for_teams(self):
         f = open(self.__file_path, "r")
         try:  # copy data into python list

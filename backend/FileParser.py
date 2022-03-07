@@ -43,4 +43,3 @@ if __name__ == '__main__':
     fp = FileParser("/Users/josh/PycharmProjects/bforb/backend/Test files/test.csv")
     fp.parse_for_teams()
     fp.__output__()
-

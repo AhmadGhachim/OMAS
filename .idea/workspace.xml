@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a31ab06-8605-468e-b66b-8bd913b043b7" name="Changes" comment="Added FileParser and skeleton for DataProcessor">
-      <change afterPath="$PROJECT_DIR$/backend/DataProcessor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/FileParser.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/Test files/test.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/FileParser.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/FileParser.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +70,7 @@
       <recent name="$PROJECT_DIR$/backend" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.FileParser">
+  <component name="RunManager" selected="Python.DataProcessor">
     <configuration name="DataProcessor" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Repo" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -163,8 +161,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.FileParser" />
         <item itemvalue="Python.DataProcessor" />
+        <item itemvalue="Python.FileParser" />
         <item itemvalue="Python.fileParser" />
       </list>
     </recent_temporary>
@@ -200,7 +198,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646681739251</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added FileParser and skeleton for DataProcessor">
+      <created>1646685091878</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1646685091879</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

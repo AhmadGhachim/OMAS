@@ -15,6 +15,7 @@ function File({ title }) {
             e.preventDefault();
             e.target.files = null;
             setFilename("");
+            alert("File deleted")
       }
 
       const handleFileInputChange = (e) => {
@@ -39,7 +40,7 @@ function File({ title }) {
                               <p>Click to Upload</p>
                         </div>
 
-                        <input ref={hiddenFileInput} type="file" id="service-file" style={{ display: "none" }} onChange={handleFileInputChange} />
+                        <input ref={hiddenFileInput} type="file" id="service-file" accept=".text/csv, xlsx" style={{ display: "none" }} onChange={handleFileInputChange} />
                   </form>
             </div>
       )

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import InputNumber from 'react-input-number';
 
 const CutOff = () => {
 

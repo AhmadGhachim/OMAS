@@ -40,7 +40,7 @@ function File({ title }) {
                               <p>Click to Upload</p>
                         </div>
 
-                        <input ref={hiddenFileInput} type="file" id="service-file" accept=".text/csv, xlsx" style={{ display: "none" }} onChange={handleFileInputChange} />
+                        <input ref={hiddenFileInput} type="file" id="service-file" accept=".text/csv,.xlsx" style={{ display: "none" }} onChange={handleFileInputChange} />
                   </form>
             </div>
       )

@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a31ab06-8605-468e-b66b-8bd913b043b7" name="Changes" comment="Changes:&#10;- Fixed the Cutoff styling">
+    <list default="true" id="0a31ab06-8605-468e-b66b-8bd913b043b7" name="Changes" comment="Changes:&#10;- Changed the width of the file upload box from 30% to 35%">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/File.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/File.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +146,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646773481341</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Changes:&#10;- Changed the width of the file upload box from 30% to 35%">
+      <created>1646773690253</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1646773690253</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,6 +176,7 @@
     <MESSAGE value="Added CutOff.js component and edited thr frontend" />
     <MESSAGE value="Changes:&#10;- Added alert when file is deleted by the user.&#10;- Upload file only accepts .csv and .xlsx.&#10;- Cutoff starts from 0 instead of 1." />
     <MESSAGE value="Changes:&#10;- Fixed the Cutoff styling" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes:&#10;- Fixed the Cutoff styling" />
+    <MESSAGE value="Changes:&#10;- Changed the width of the file upload box from 30% to 35%" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes:&#10;- Changed the width of the file upload box from 30% to 35%" />
   </component>
 </project>

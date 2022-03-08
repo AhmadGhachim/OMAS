@@ -32,7 +32,14 @@ class FileParser(object):
         self.__date = self.__data[0][2]['date']
         self.__start_time = self.__data[0][2]['time']
 
-    def __output__(self):
+    # To be implemented
+    def parse_for_zoom(self):
+        pass
+
+    def parse_for_webex(self):
+        pass
+
+    def __str__(self):
         for x in self.__data:
             for z in x:
                 print(str(z) + "  " * 6, end='')

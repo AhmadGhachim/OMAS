@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a31ab06-8605-468e-b66b-8bd913b043b7" name="Changes" comment="Changes:&#10;- Added alert when file is deleted by the user.&#10;- Upload file only accepts .csv and .xlsx.&#10;- Cutoff starts from 0 instead of 1.">
+    <list default="true" id="0a31ab06-8605-468e-b66b-8bd913b043b7" name="Changes" comment="Changes:&#10;- Fixed the Cutoff styling">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
     </list>
@@ -139,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646771971102</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Changes:&#10;- Fixed the Cutoff styling">
+      <created>1646773481341</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1646773481341</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,6 +168,7 @@
     <MESSAGE value="Created a Django environment under 'backend'" />
     <MESSAGE value="Added CutOff.js component and edited thr frontend" />
     <MESSAGE value="Changes:&#10;- Added alert when file is deleted by the user.&#10;- Upload file only accepts .csv and .xlsx.&#10;- Cutoff starts from 0 instead of 1." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes:&#10;- Added alert when file is deleted by the user.&#10;- Upload file only accepts .csv and .xlsx.&#10;- Cutoff starts from 0 instead of 1." />
+    <MESSAGE value="Changes:&#10;- Fixed the Cutoff styling" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes:&#10;- Fixed the Cutoff styling" />
   </component>
 </project>

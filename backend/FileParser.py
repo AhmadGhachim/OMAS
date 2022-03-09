@@ -1,13 +1,13 @@
 class FileParser(object):
     def __init__(self, file_path: str):
-        self.__file_path = file_path
-        self.__data = list()
+        self.file_path = file_path
+        self.data = list()
 
-        self.__start_time = None  # Time of first join of user
-        self.__date = None  # Date of first join of user
+        self.start_time = None  # Meeting start time. Format -> 00:34:12
+        self.date = None  # Meeting start date. Format -> 05/01/22
 
     def parse_for_teams(self):
-        f = open(self.__file_path, "r")
+        f = open(self.file_path, "r")
         try:  # copy data into python list
             for y in f:
                 y = y.strip()
@@ -20,26 +20,39 @@ class FileParser(object):
                     pass
                 except IndexError:
                     pass
-                self.__data.append(y)
+                self.data.append(y)
 
         except UnicodeDecodeError:
             pass
 
         f.close()
 
-        self.__data = self.__data[1:]  # take out header aka first element of a list
+        self.data = self.data[1:]  # take out header (first element) of the list
 
-        self.__date = self.__data[0][2]['date']
-        self.__start_time = self.__data[0][2]['time']
+        self.date = self.data[0][2]['date']
+        self.start_time = self.data[0][2]['time']
+
+    # To be implemented
+    def parse_for_zoom(self):
+        pass
+
+    def parse_for_webex(self):
+        pass
+
+    def __str__(self):
+        string = ''
+        for x in self.data:
+            string += str(x) + "\n"
+        return string[0:-1]
 
     def __output__(self):
-        for x in self.__data:
+        for x in self.data:
             for z in x:
                 print(str(z) + "  " * 6, end='')
             print()
 
 
 if __name__ == '__main__':
-    fp = FileParser("/Users/josh/PycharmProjects/bforb/backend/Test files/test.csv")
+    fp = FileParser("/Users/xecute/Desktop/370Repo/backend/Test files/test.csv")
     fp.parse_for_teams()
     fp.__output__()

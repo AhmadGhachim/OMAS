@@ -6,6 +6,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
 
+  const [meetingType, setMeetingType] = useState("zoom")
+
   const [num, setNum] = useState(0);
 
   // state to determine if the Process button should be disabled or not. (boolean value)
@@ -34,6 +36,10 @@ function App() {
     setNum(num)
   }
 
+  const updateMeetingType = (newMeetingType) => {
+    setMeetingType(newMeetingType);
+  }
+
   // placeholder function to handle the onclick for the Process button
   const handleProcessSubmit = (e) => {
     setIsProcessed(isProcessed => !isProcessed);
@@ -51,6 +57,8 @@ function App() {
               isProcessed={isProcessed}
               outputData={outputData}
               isReady={isReady}
+              meetingType={meetingType}
+              updateMeetingType={updateMeetingType}
             />
           }
         />

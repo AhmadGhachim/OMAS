@@ -4,7 +4,7 @@ import CutOff from './CutOff'
 import File from './File'
 import DisplayedData from './DisplayedData'
 
-function HomePage({ num, updateCutOffNum, handleProcessSubmit, isProcessed, outputData, isReady }) {
+function HomePage({ num, updateCutOffNum, handleProcessSubmit, isProcessed, outputData, isReady, meetingType, updateMeetingType }) {
 
       const processBtnRef = useRef(null);
 
@@ -51,7 +51,7 @@ function HomePage({ num, updateCutOffNum, handleProcessSubmit, isProcessed, outp
 
                   </div>
 
-                  <MeetingType />
+                  <MeetingType meetingType={meetingType} updateMeetingType={updateMeetingType} />
                   <CutOff cutOffNum={num} updateCutOffNum={updateCutOffNum} />
 
                   <div className="meeting-documents">

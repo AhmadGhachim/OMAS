@@ -1,10 +1,8 @@
 import './App.css';
-import { useState, useEffect, useRef } from 'react';
-import MeetingType from './components/MeetingType';
-import File from './components/File';
-import CutOff from "./components/CutOff";
-import DisplayedData from './components/DisplayedData';
+import { useState } from 'react';
+import HomePage from './components/HomePage';
 
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
 
@@ -31,76 +29,36 @@ function App() {
     },
   ])
 
-  const processBtnRef = useRef(null);
 
   const updateCutOffNum = (num) => {
     setNum(num)
   }
 
-  // placeholder function to allow the Process button to switch between disabled and non-disabled states.
-  useEffect(() => {
-    if (isReady) {
-      processBtnRef.current.className = "ready"
-      processBtnRef.current.disabled = false;
-      // processBtnRef.current.onClick = () => handleSubmit();
-    }
-    else {
-      processBtnRef.current.className = ""
-      processBtnRef.current.disabled = true;
-    }
-  }, [isReady])
-
-
   // placeholder function to handle the onclick for the Process button
-  const handleSubmit = (e) => {
+  const handleProcessSubmit = (e) => {
     setIsProcessed(isProcessed => !isProcessed);
   }
 
   return (
-    <div className="App">
-      <div className="header">
-        <h2>
-          OMAS
-        </h2>
-        <h3>
-          An attendance system for online meeting platforms (Zoom, Teams etc.) which uses meeting reports generated
-          by these services and automatically organises it in a database for the user.
-        </h3>
-      </div>
-      <div className="steps">
-        <ol className="inside-steps" >
-          <li>Select a meeting service that matches your platform.</li>
-          <li>
-            Select cutoff (Time required to be in meeting to be marked as present).
-          </li>
-          <li>
-            Upload the meeting service file provided by the platform.
-          </li>
-          <li>
-            Upload a file containing the student database.
-          </li>
-          <li>
-            Click the process button when steps 1 to 4 are done!
-          </li>
-        </ol>
+    <Router>
 
-      </div>
+      <Routes>
+        <Route path="/"
+          element={
+            <HomePage num={num}
+              updateCutOffNum={updateCutOffNum}
+              handleProcessSubmit={handleProcessSubmit}
+              isProcessed={isProcessed}
+              outputData={outputData}
+              isReady={isReady}
+            />
+          }
+        />
 
-      <MeetingType />
-      <CutOff cutOffNum={num} updateCutOffNum={updateCutOffNum} />
+      </Routes>
 
-      <div className="meeting-documents">
-        <File title="Meeting Service File" />
-        <File title="Student Database File" />
-      </div>
+    </Router>
 
-      <div className="Process_button">
-        <button onClick={handleSubmit} ref={processBtnRef}>{isProcessed ? "Processed" : "Process"}</button>
-      </div>
-
-      {isProcessed && <DisplayedData outputData={outputData} />}
-
-    </div>
   );
 }
 

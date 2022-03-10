@@ -8,6 +8,8 @@ import DisplayedData from './components/DisplayedData';
 
 function App() {
 
+  const [num, setNum] = useState(0);
+
   // state to determine if the Process button should be disabled or not. (boolean value)
   const [isReady, setIsReady] = useState(true);
 
@@ -30,6 +32,10 @@ function App() {
   ])
 
   const processBtnRef = useRef(null);
+
+  const updateCutOffNum = (num) => {
+    setNum(num)
+  }
 
   // placeholder function to allow the Process button to switch between disabled and non-disabled states.
   useEffect(() => {
@@ -81,7 +87,7 @@ function App() {
       </div>
 
       <MeetingType />
-      <CutOff />
+      <CutOff cutOffNum={num} updateCutOffNum={updateCutOffNum} />
 
       <div className="meeting-documents">
         <File title="Meeting Service File" />

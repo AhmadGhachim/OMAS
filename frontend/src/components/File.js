@@ -1,8 +1,6 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
-function File({ title }) {
-
-      const [filename, setFilename] = useState("");
+function File({ title, file, handleFileStateUpdate }) {
 
       const hiddenFileInput = useRef(null);
 
@@ -13,16 +11,24 @@ function File({ title }) {
 
       const handleDelete = (e) => {
             e.preventDefault();
-            e.target.files = null;
-            setFilename("");
-            alert("File deleted")
+            hiddenFileInput.current.value = "";
+            handleFileStateUpdate(title, null);
+            alert("File deleted");
       }
 
-      const handleFileInputChange = (e) => {
+      const handleFileInputChange = async (e) => {
             const uploadedFile = e.target.files[0];
-            setFilename(uploadedFile.name);
+            handleFileStateUpdate(title, uploadedFile);
       }
 
+      useEffect(() => {
+            if (file) {
+                  hiddenFileInput.current.disabled = true;
+            }
+            else {
+                  hiddenFileInput.current.disabled = false;
+            }
+      })
       return (
             <div className="file">
                   <form>
@@ -30,9 +36,9 @@ function File({ title }) {
 
                         <div className="file-input-btn" onClick={handleClick}>
                               {
-                                    filename !== "" &&
+                                    file &&
                                     <div className="file-info">
-                                          <p>{filename}</p>
+                                          <p>{file.name}</p>
                                           <button className="cancel-btn" onClick={handleDelete}>X</button>
                                     </div>
                               }
@@ -40,7 +46,7 @@ function File({ title }) {
                               <p>Click to Upload</p>
                         </div>
 
-                        <input ref={hiddenFileInput} type="file" id="service-file" accept=".text/csv,.xlsx" style={{ display: "none" }} onChange={handleFileInputChange} />
+                        <input ref={hiddenFileInput} type="file" id="service-file" accept=".txt,.xlsx,.csv" style={{ display: "none" }} onChange={handleFileInputChange} />
                   </form>
             </div>
       )

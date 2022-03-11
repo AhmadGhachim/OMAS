@@ -4,7 +4,7 @@ import CutOff from './CutOff'
 import File from './File'
 import DisplayedData from './DisplayedData'
 
-function HomePage({ num, updateCutOffNum, handleProcessSubmit, isProcessed, outputData, isReady, meetingType, updateMeetingType }) {
+function HomePage({ num, updateCutOffNum, handleProcessSubmit, isProcessed, outputData, isReady, meetingType, updateMeetingType, serviceFile, databaseFile, handleFileInputChange, handleFileStateUpdate }) {
 
       const processBtnRef = useRef(null);
 
@@ -55,8 +55,8 @@ function HomePage({ num, updateCutOffNum, handleProcessSubmit, isProcessed, outp
                   <CutOff cutOffNum={num} updateCutOffNum={updateCutOffNum} />
 
                   <div className="meeting-documents">
-                        <File title="Meeting Service File" />
-                        <File title="Student Database File" />
+                        <File title="Meeting Service File" file={serviceFile} handleFileStateUpdate={handleFileStateUpdate} />
+                        <File title="Student Database File" file={databaseFile} handleFileStateUpdate={handleFileStateUpdate} />
                   </div>
 
                   <div className="Process_button">

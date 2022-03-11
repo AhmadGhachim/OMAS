@@ -65,7 +65,6 @@ label {
   padding: 1em;
   border-radius: 5em;
   height: fit-content;
-
 }
 
 input[type="number"] {
@@ -83,14 +82,6 @@ input[type="number"] {
   margin: 3em 3em;
   display: flex;
   justify-content: space-between;
-}
-
-.meeting-documents button:hover {
-  background-color: rgb(53, 171, 53);
-}
-
-.meeting-documents button:active {
-  background-color: rgba(33, 135, 33, 0.633);
 }
 
 .file {
@@ -140,6 +131,10 @@ input[type="number"] {
   border-radius: 0.5em;
   border: none;
   height: fit-content;
+}
+
+.file-info .cancel-btn:hover {
+  background-color: rgb(234, 13, 13);
 }
 
 .Process_button {

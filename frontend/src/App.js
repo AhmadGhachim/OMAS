@@ -1,5 +1,5 @@
 import './App.css';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import HomePage from './components/HomePage';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -23,13 +23,13 @@ function App() {
   // state to store the returned data from the backend. (Array of objects of students)
   const [outputData, setOutputData] = useState([
     {
-      name: "Posi Adeyemi",
+      name: "Posi",
       duration: "37:01",
       attended: "present",
     },
 
     {
-      name: "Ahmad Ghachim",
+      name: "Ahmad",
       duration: "37:01",
       attended: "present",
     },
@@ -46,38 +46,10 @@ function App() {
 
   // placeholder function to handle the onclick for the Process button
   const handleProcessSubmit = (e) => {
-    setIsProcessed(isProcessed => !isProcessed);
+   console.log(meetingType)
+   console.log(num)
+   setIsProcessed(isProcessed => !isProcessed);
   }
-
-  // const handleFileInputChange = (e, title) => {
-  //   // e.preventDefault();
-  //   // const reader = new FileReader();
-  //   // reader.onload = () => {
-  //   //   console.log(reader.result)
-  //   //   var blocks = reader.result.split(";");
-  //   //   console.log(blocks)
-  //   //   const realData = blocks[1].split(",")[1];
-  //   //   console.log(realData)
-  //   //   handleFileStateUpdate(title, realData);
-  //   // }
-  //   // reader.onerror = (error) => console.error(error);
-  //   // reader.readAsDataURL(e.target.files[0]);
-
-  //   e.preventDefault();
-  //   console.log(e.target.files[0])
-  //   handleFileStateUpdate(title, e.target.files[0])
-  // }
-
-  const handleFileStateUpdate = (title, data) => {
-    console.log(data)
-    if (title === "Meeting Service File") {
-      setServiceFile(data)
-    }
-    else {
-      setDatabaseFile(data)
-    }
-  }
-
 
   return (
     <Router>
@@ -85,7 +57,8 @@ function App() {
       <Routes>
         <Route path="/"
           element={
-            <HomePage num={num}
+            <HomePage
+              num={num}
               updateCutOffNum={updateCutOffNum}
               handleProcessSubmit={handleProcessSubmit}
               isProcessed={isProcessed}
@@ -93,10 +66,6 @@ function App() {
               isReady={isReady}
               meetingType={meetingType}
               updateMeetingType={updateMeetingType}
-              serviceFile={serviceFile}
-              databaseFile={databaseFile}
-              // handleFileInputChange={handleFileInputChange}
-              handleFileStateUpdate={handleFileStateUpdate}
             />
           }
         />

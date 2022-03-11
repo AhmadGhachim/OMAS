@@ -22,11 +22,14 @@ function DisplayedData({ outputData }) {
                               </div>
                         </div>
 
+
+
                         {outputData.map(each => (
                               <div className="content">
                                     <div className="content-item">{each.name}</div>
                                     <div className="content-item">{each.duration}</div>
                                     <div className="content-item">{each.attended}</div>
+
                               </div>
                         ))}
                   </div>

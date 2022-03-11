@@ -13,6 +13,7 @@ const MeetingType = ({ meetingType, updateMeetingType }) => {
                                           <option value="zoom">Zoom</option>
                                           <option value="teams">Teams</option>
                                           <option value="webex">Webex</option>
+                                          <option value="skype">Skype</option>
                                     </select>
                               </span>
 

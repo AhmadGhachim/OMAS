@@ -13,7 +13,7 @@ function HomePage({ num, updateCutOffNum, handleProcessSubmit, isProcessed, outp
             if (isReady) {
                   processBtnRef.current.className = "ready"
                   processBtnRef.current.disabled = false;
-                  // processBtnRef.current.onClick = () => handleSubmit();
+                 // processBtnRef.current.onClick = () => handleSubmit();
             }
             else {
                   processBtnRef.current.className = ""
@@ -47,6 +47,7 @@ function HomePage({ num, updateCutOffNum, handleProcessSubmit, isProcessed, outp
                               <li>
                                     Click the process button when steps 1 to 4 are done!
                               </li>
+
                         </ol>
 
                   </div>
@@ -61,6 +62,7 @@ function HomePage({ num, updateCutOffNum, handleProcessSubmit, isProcessed, outp
 
                   <div className="Process_button">
                         <button onClick={handleProcessSubmit} ref={processBtnRef}>{isProcessed ? "Processed" : "Process"}</button>
+
                   </div>
 
                   {isProcessed && <DisplayedData outputData={outputData} />}

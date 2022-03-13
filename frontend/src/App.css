@@ -38,6 +38,7 @@ label {
   padding: 1em;
   border-radius: 5em;
   height: fit-content;
+  margin: 10em;
 }
 
 .meeting-type select {
@@ -216,3 +217,21 @@ button {
   font-weight: bold;
   font-size: 1.2rem;
 }
+
+.initialize_btn {
+  justify-content: flex;
+  align-items: center;
+  display: flex;
+}
+
+.workbook {
+  justify-content: center;
+  align-items: center;
+}
+
+.addClass {
+  margin: 1em;
+  justify-content: center;
+  align-items: center;
+}
+

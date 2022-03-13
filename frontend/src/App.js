@@ -1,6 +1,8 @@
 import './App.css';
 import { useState } from 'react';
 import HomePage from './components/HomePage';
+import WorkbookInitializer from './components/WorkbookInitializer';
+
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -61,7 +63,8 @@ function App() {
               updateMeetingType={updateMeetingType}
             />
           }
-        />
+          />
+          <Route path="/workbookInitializer" element={<WorkbookInitializer/>}/>
 
       </Routes>
 

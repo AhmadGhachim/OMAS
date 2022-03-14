@@ -84,16 +84,16 @@ def cell_2_row_col(cell):
 
 
 if __name__ == '__main__':
-    file = None  # fixMe: file name (incl. extension)
+    file = None  # file name (incl. extension)
     if file is not None:
         workbook = load_workbook(file)  # File opening command
         print("Sheets in workbook-", workbook.sheetnames)  # Print names of all the sheets in the workbook
 
-        workbook._active_sheet_index = 0  # fixMe: Set current sheet index
+        workbook._active_sheet_index = 0  # Set current sheet index
         sheet = workbook.active  # Gets reference to the currently active sheet in the workbook, unless overridden
         print("Current sheet name =", sheet.title)  # Prints sheet name
 
-        cell_sheet = "B1"  # fixMe: cell to fetch data from
+        cell_sheet = "B1"  # cell to fetch data from
 
         cell_sheet = cell_2_row_col(cell_sheet)
         print("Value in cell", str(cell_sheet), "=",

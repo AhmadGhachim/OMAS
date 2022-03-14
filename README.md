@@ -14,6 +14,7 @@ Backend is almost fully implemented. We only need to implement database analysis
 
 How to run-
 - Just run 'backend/Main.py'. (I recommend using an IDE, since it has a lot of dependencies. We tried to package it, need to work on that a bit more)
+- Note- If the server does not run, you need to install Django using `python -m pip install Django` (you also need to install Python)
 
 ___
 

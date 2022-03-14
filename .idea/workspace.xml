@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a31ab06-8605-468e-b66b-8bd913b043b7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/Attendance files/CMPT 370.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/Class List/4B.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/Class List/CMPT 370.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/Class List/MATH 211.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/first_time.ps1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/run_regular.ps1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/first_time.ps1" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/first_time.ps1" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,6 +175,8 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.WorkbookInitializer" />
+        <item itemvalue="Python.Main" />
         <item itemvalue="Python.WorkbookInitializer" />
         <item itemvalue="Python.Main" />
       </list>

@@ -23,7 +23,9 @@ def workbook_initializer(class_name: str, start_end_month: tuple, class_list_pat
     else:
         months = original_months[original_months.index(start_end_month[0]):original_months.index(start_end_month[1]) + 1]
 
+
     class_list = open(class_list_path, 'r')
+
     class_list_copy = list()
     for name in class_list:
         name = name.strip()

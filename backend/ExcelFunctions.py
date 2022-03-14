@@ -1,7 +1,6 @@
 import string
 from openpyxl import load_workbook  # WORKS ONLY WITH CONDA, use command line - pip install openpyxl
 
-
 def alphabet_2_number(alpha):
     """
     Converts Excel column identifier to number (eg. AB -> 28) [ Helper for cell_2_row_col() ]

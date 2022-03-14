@@ -5,15 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a31ab06-8605-468e-b66b-8bd913b043b7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/Attendance files/4B.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/Attendance files/CMPT 370.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/Class List/4B.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/Class List/CMPT 370.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/Class List/MATH 211.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/first_time.ps1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/run_regular.ps1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/DataProcessor.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/DataProcessor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/ExcelFunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/ExcelFunctions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/FileParser.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/FileParser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/WorkbookInitializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/WorkbookInitializer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/README.md" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +59,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Frontend" />
+        <entry key="$PROJECT_DIR$" value="Backend" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -181,6 +179,7 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.WorkbookInitializer" />
         <item itemvalue="Python.Main" />
       </list>
     </recent_temporary>
@@ -254,7 +253,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646868023834</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Added test cases in Main.py, added error handling. Updated README.md">
+      <created>1647232258154</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1647232258154</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -279,7 +285,8 @@
     <MESSAGE value="Changes:&#10;- Fixed the Cutoff styling" />
     <MESSAGE value="Changes:&#10;- Changed the width of the file upload box from 30% to 35%" />
     <MESSAGE value="Implemented primitive integration of backend and frontend" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented primitive integration of backend and frontend" />
+    <MESSAGE value="Added test cases in Main.py, added error handling. Updated README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added test cases in Main.py, added error handling. Updated README.md" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/370_Repo$Main.coverage" NAME="Main Coverage Results" MODIFIED="1647230816569" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />

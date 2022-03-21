@@ -4,9 +4,9 @@ from difflib import SequenceMatcher
 import openpyxl
 from openpyxl.styles import Font, PatternFill
 # local modules
-import MathFunctions
-from FileParser import FileParser
-import ExcelFunctions
+from .MathFunctions import *
+from .FileParser import FileParser
+from .ExcelFunctions import *
 
 original_months = ['January', 'February', 'March', 'April', 'May', 'June',
                        'July', 'August', 'September', 'October', 'November', 'December']
@@ -111,9 +111,9 @@ class DataProcessor(object):
                 self.__duration_db[y[0]].append(y[2]['time'])
         for y in self.__duration_db:
             if len(self.__duration_db[y]) % 2 == 1:
-                self.__duration_db[y].append(MathFunctions.timestamp_from_duration(self.__file_parser.start_time, self.__class_duration))
+                self.__duration_db[y].append(timestamp_from_duration(self.__file_parser.start_time, self.__class_duration))
         for y in self.__duration_db:
-            self.__duration_db[y] = MathFunctions.total_duration(self.__duration_db[y])
+            self.__duration_db[y] = total_duration(self.__duration_db[y])
 
 
         self.__report['absent'] = self.__class_list.copy()
@@ -144,26 +144,26 @@ class DataProcessor(object):
         sheet = wb.active
 
         # Write date on top of the column where data is to be stored
-        sheet[ExcelFunctions.row_col_2_cell(1, int(self.__file_parser.date.split("/")[0]) + 1)] = \
+        sheet[row_col_2_cell(1, int(self.__file_parser.date.split("/")[0]) + 1)] = \
             original_months[int(self.__file_parser.date.split("/")[1]) - 1][:3] + " " + \
             self.__file_parser.date.split("/")[0]
 
         # First mark everyone as absent
         for x in range(len(self.__class_list)):
-            sheet[ExcelFunctions.row_col_2_cell(x + 2, int(self.__file_parser.date.split("/")[0]) + 1)] = 'A'
-            sheet[ExcelFunctions.row_col_2_cell(x + 2, int(self.__file_parser.date.split("/")[0]) + 1)].font = absent_text
-            sheet[ExcelFunctions.row_col_2_cell(x + 2, int(self.__file_parser.date.split("/")[0]) + 1)].fill = absent_style
+            sheet[row_col_2_cell(x + 2, int(self.__file_parser.date.split("/")[0]) + 1)] = 'A'
+            sheet[row_col_2_cell(x + 2, int(self.__file_parser.date.split("/")[0]) + 1)].font = absent_text
+            sheet[row_col_2_cell(x + 2, int(self.__file_parser.date.split("/")[0]) + 1)].fill = absent_style
 
         # Then mark students as present or partial
         for x in self.__report['present']:
-            sheet[ExcelFunctions.row_col_2_cell(self.__class_list.index(x) + 2, int(self.__file_parser.date.split("/")[0]) + 1)] = "P"
-            sheet[ExcelFunctions.row_col_2_cell(self.__class_list.index(x) + 2, int(self.__file_parser.date.split("/")[0]) + 1)].font = present_text
-            sheet[ExcelFunctions.row_col_2_cell(self.__class_list.index(x) + 2, int(self.__file_parser.date.split("/")[0]) + 1)].fill = present_style
+            sheet[row_col_2_cell(self.__class_list.index(x) + 2, int(self.__file_parser.date.split("/")[0]) + 1)] = "P"
+            sheet[row_col_2_cell(self.__class_list.index(x) + 2, int(self.__file_parser.date.split("/")[0]) + 1)].font = present_text
+            sheet[row_col_2_cell(self.__class_list.index(x) + 2, int(self.__file_parser.date.split("/")[0]) + 1)].fill = present_style
 
         for x in self.__report['partial']:
-            sheet[ExcelFunctions.row_col_2_cell(self.__class_list.index(x) + 2, int(self.__file_parser.date.split("/")[0]) + 1)] = "H"
-            sheet[ExcelFunctions.row_col_2_cell(self.__class_list.index(x) + 2, int(self.__file_parser.date.split("/")[0]) + 1)].font = partial_text
-            sheet[ExcelFunctions.row_col_2_cell(self.__class_list.index(x) + 2, int(self.__file_parser.date.split("/")[0]) + 1)].fill = partial_style
+            sheet[row_col_2_cell(self.__class_list.index(x) + 2, int(self.__file_parser.date.split("/")[0]) + 1)] = "H"
+            sheet[row_col_2_cell(self.__class_list.index(x) + 2, int(self.__file_parser.date.split("/")[0]) + 1)].font = partial_text
+            sheet[row_col_2_cell(self.__class_list.index(x) + 2, int(self.__file_parser.date.split("/")[0]) + 1)].fill = partial_style
 
         wb.save(self.__workbook_path)
         wb.close()
@@ -234,3 +234,6 @@ class DataProcessor(object):
             print("\t" + str(counter) + ". " + self.__error_db[0][y] + " (replaced with " + self.__error_db[1][y] + ")")
             counter += 1
         print()
+
+    def __str__(self):
+        return self.__workbook_path

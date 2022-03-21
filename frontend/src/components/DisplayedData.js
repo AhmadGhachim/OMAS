@@ -1,10 +1,23 @@
 import React from 'react'
 
 function DisplayedData({ outputData }) {
+
+      const initiateDownload = async (e) => {
+            e.preventDefault()
+            try {
+                  const res = await fetch("http://127.0.0.1:8000/api/download")
+                  // const data = await res.json()
+                  console.log(res)
+            }
+            catch (err) {
+                  console.log(err)
+            }
+      }
+
       return (
             <div className="displayed-data">
                   <div className="download-btn">
-                        <button>
+                        <button onClick={initiateDownload}>
                               Download file
                         </button>
                   </div>

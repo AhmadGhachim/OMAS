@@ -186,6 +186,7 @@ button {
 .download-btn button {
   background-color: rgb(210, 208, 208);
   color: black;
+  cursor: pointer;
 }
 
 .heading,

@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import HomePage from './components/HomePage';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import CutOff from './components/CutOff';
 
 function App() {
 
@@ -15,7 +16,7 @@ function App() {
   const [databaseFile, setDatabaseFile] = useState(null)
 
   // state to determine if the Process button should be disabled or not. (boolean value)
-  const [isReady, setIsReady] = useState(true);
+  const [isReady, setIsReady] = useState(false);
 
   // state to determine if the data has been processed and returned from the backend.(boolen value)
   const [isProcessed, setIsProcessed] = useState(false);
@@ -45,28 +46,28 @@ function App() {
   }
 
   // placeholder function to handle the onclick for the Process button
-  const handleProcessSubmit = (e) => {
-    setIsProcessed(isProcessed => !isProcessed);
+  const handleProcessSubmit = async (e) => {
+    const uploadData = new FormData()
+    uploadData.append("meetingType", meetingType)
+    uploadData.append("cutOffNum", num)
+    uploadData.append("serviceFile", serviceFile, serviceFile.name)
+    uploadData.append("databaseFile", databaseFile, databaseFile.name)
+
+    try {
+      const res = await fetch("http://127.0.0.1:8000/api/processData", {
+        method: "POST",
+        body: uploadData
+      })
+
+      console.log(res)
+      setIsProcessed(isProcessed => !isProcessed);
+    }
+    catch (error) {
+      console.log(error)
+    }
+
   }
 
-  // const handleFileInputChange = (e, title) => {
-  //   // e.preventDefault();
-  //   // const reader = new FileReader();
-  //   // reader.onload = () => {
-  //   //   console.log(reader.result)
-  //   //   var blocks = reader.result.split(";");
-  //   //   console.log(blocks)
-  //   //   const realData = blocks[1].split(",")[1];
-  //   //   console.log(realData)
-  //   //   handleFileStateUpdate(title, realData);
-  //   // }
-  //   // reader.onerror = (error) => console.error(error);
-  //   // reader.readAsDataURL(e.target.files[0]);
-
-  //   e.preventDefault();
-  //   console.log(e.target.files[0])
-  //   handleFileStateUpdate(title, e.target.files[0])
-  // }
 
   const handleFileStateUpdate = (title, data) => {
     console.log(data)
@@ -77,6 +78,17 @@ function App() {
       setDatabaseFile(data)
     }
   }
+
+  useEffect(() => {
+    if (serviceFile != null && databaseFile != null) {
+      setIsReady(true)
+    }
+    else {
+      if (isReady) {
+        setIsReady(false)
+      }
+    }
+  }, [serviceFile, databaseFile])
 
 
   return (
@@ -95,7 +107,6 @@ function App() {
               updateMeetingType={updateMeetingType}
               serviceFile={serviceFile}
               databaseFile={databaseFile}
-              // handleFileInputChange={handleFileInputChange}
               handleFileStateUpdate={handleFileStateUpdate}
             />
           }

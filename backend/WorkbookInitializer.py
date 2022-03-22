@@ -3,6 +3,9 @@ import os
 import openpyxl
 from openpyxl.styles import Font
 
+path = os.path.abspath(os.path.pardir)
+path = path.replace("\\", "/", path.count("\\"))
+
 def workbook_initializer(class_name: str, start_end_month: tuple, class_list_path: str):
     """
     Creates an empty workbook with student names, with a sheet for each month.

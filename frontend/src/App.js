@@ -36,7 +36,6 @@ function App() {
     },
   ])
 
-
   const updateCutOffNum = (num) => {
     setNum(num)
   }

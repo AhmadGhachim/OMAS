@@ -4,9 +4,9 @@ from difflib import SequenceMatcher
 import openpyxl
 from openpyxl.styles import Font, PatternFill
 # local modules
-import MathFunctions
-from FileParser import FileParser
-import ExcelFunctions
+import backend.MathFunctions as MathFunctions
+from backend.FileParser import FileParser
+import backend.ExcelFunctions as ExcelFunctions
 
 original_months = ['January', 'February', 'March', 'April', 'May', 'June',
                        'July', 'August', 'September', 'October', 'November', 'December']

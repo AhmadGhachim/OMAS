@@ -3,28 +3,33 @@
 import os
 import random
 
-from WorkbookInitializer import workbook_initializer
-from DataProcessor import DataProcessor
+from backend.WorkbookInitializer import workbook_initializer
+from backend.DataProcessor import DataProcessor
 
 if "Excel files" not in os.listdir():
     os.mkdir("Excel files")
 
-directory = [x[:-4] for x in os.listdir("Attendance files") if x[-4:] == ".csv"
-                 and x[:-4] + ".xlsx" in os.listdir("Excel files")]
+path = os.path.abspath(os.path.pardir)
+path = path.replace("\\", "/", path.count("\\"))
+
+directory = [x[:-4] for x in os.listdir(path + "/backend/Attendance files") if x[-4:] == ".csv"
+                 and x[:-4] + ".xlsx" in os.listdir(path + "/backend/Excel files")]
+
+
 
 test_start_end_months = [("January", "October"), ("September", "July")]
 
 if not len(directory):
     print("Running initializer...")
-    for x in range(len(os.listdir("Class List"))):
-        workbook_initializer(os.listdir("Class List")[x].split(".")[0], test_start_end_months[random.randint(0, 1)], "Class List/" + os.listdir("Class List")[x])
+    for x in range(len(os.listdir(path + "/backend/Class List"))):
+        workbook_initializer(os.listdir(path + "/backend/Class List")[x].split(".")[0], test_start_end_months[random.randint(0, 1)], "Class List/" + os.listdir("Class List")[x])
 
-if len(os.listdir("Class List")) > len(os.listdir("Excel files")):
+if len(os.listdir(path + "/backend/Class List")) > len(os.listdir(path + "/backend/Excel files")):
     for x in os.listdir("Class List"):
         if x[0:-4] + ".xlsx" not in os.listdir("Class List"):
             workbook_initializer(x[0:-4], test_start_end_months[1], "Class List/" + x)
 
-directory = [x[:-4] for x in os.listdir("Attendance files") if x[-4:] == ".csv"
+directory = [x[:-4] for x in os.listdir(path + "/backend/Attendance files") if x[-4:] == ".csv"
                  and x[:-4] + ".xlsx" in os.listdir("Excel files")]
 
 for x in directory:

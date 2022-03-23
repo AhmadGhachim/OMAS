@@ -14,8 +14,8 @@ ASSETS_PATH = OUTPUT_PATH / Path("./assets")
 def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
 
-
 window = Tk()
+
 
 window.geometry("1500x1000")
 window.configure(bg = "#FFFFFF")
@@ -187,7 +187,7 @@ canvas.create_text(
 )
 
 button_image_6 = PhotoImage(
-    file=relative_to_assets("button_6.png"))
+    file=relative_to_assets("porcess.png"))
 button_6 = Button(
     image=button_image_6,
     borderwidth=0,

@@ -4,32 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a31ab06-8605-468e-b66b-8bd913b043b7" name="Changes" comment="">
+    <list default="true" id="0a31ab06-8605-468e-b66b-8bd913b043b7" name="Changes" comment="added the rest of the GUIs">
       <change afterPath="$PROJECT_DIR$/backend/Excel files/4B.xlsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/Excel files/CMPT 370.xlsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/Excel files/MATH 211.xlsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/Reports/4B report.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/assets/addNewClass.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/assets/addStudent.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/assets/button_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/assets/button_4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/assets/button_5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/assets/button_7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/assets/check-mark-button_2705.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/assets/dropDown.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/assets/duration.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/assets/entry_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/assets/entry_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/assets/export.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/assets/goBack.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/assets/monthAnalysis.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/assets/openRecord.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/assets/porcess.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/assets/recordDropDown.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/assets/studentAnalysisDur.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/assets/studentAnalysisMonth.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/assets/uploadList.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/assets/viewRecord.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/frontend/build/favicon.ico" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/frontend/build/logo192.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/frontend/build/manifest.json" afterDir="false" />
@@ -8740,6 +8719,7 @@
       <change afterPath="$PROJECT_DIR$/frontend/node_modules/yargs/yargs" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/frontend/node_modules/yocto-queue/index.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/frontend/node_modules/yocto-queue/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -8834,8 +8814,8 @@
       <recent name="C:\Users\ahmad\PyCharm" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.initialzeExcelDatabases">
-    <configuration name="home" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.home (1)">
+    <configuration name="home (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Repo" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -8848,7 +8828,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\ahmad\Desktop\pycharm\frontend\home.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/frontend/home.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -8969,19 +8949,19 @@
     </configuration>
     <list>
       <item itemvalue="Python.main" />
-      <item itemvalue="Python.home" />
       <item itemvalue="Python.newStudent" />
       <item itemvalue="Python.report" />
       <item itemvalue="Python.viewRecord" />
       <item itemvalue="Python.initialzeExcelDatabases" />
+      <item itemvalue="Python.home (1)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.initialzeExcelDatabases" />
+        <item itemvalue="Python.home (1)" />
         <item itemvalue="Python.viewRecord" />
         <item itemvalue="Python.report" />
         <item itemvalue="Python.newStudent" />
-        <item itemvalue="Python.home" />
+        <item itemvalue="Python.initialzeExcelDatabases" />
       </list>
     </recent_temporary>
   </component>
@@ -8998,7 +8978,8 @@
       <workItem from="1646351745427" duration="6311000" />
       <workItem from="1646928557825" duration="1901000" />
       <workItem from="1647909175977" duration="8846000" />
-      <workItem from="1648012941270" duration="5059000" />
+      <workItem from="1648012941270" duration="5257000" />
+      <workItem from="1648018388317" duration="293000" />
     </task>
     <task id="LOCAL-00001" summary="Created a Django environment under 'omas_backend'">
       <created>1645490481639</created>
@@ -9063,7 +9044,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647994486417</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="added the rest of the GUIs">
+      <created>1648018190800</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1648018190800</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -9094,16 +9082,17 @@
     <option name="LAST_COMMIT_MESSAGE" value="added the rest of the GUIs" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/pycharm$viewRecord.coverage" NAME="viewRecord Coverage Results" MODIFIED="1648016874272" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/frontend" />
-    <SUITE FILE_PATH="coverage/pycharm$newStudent.coverage" NAME="newStudent Coverage Results" MODIFIED="1648015728252" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/frontend" />
-    <SUITE FILE_PATH="coverage/pycharm$initialzeExcelDatabases.coverage" NAME="initialzeExcelDatabases Coverage Results" MODIFIED="1648017932107" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/frontend" />
+    <SUITE FILE_PATH="coverage/pycharm$viewRecord.coverage" NAME="viewRecord Coverage Results" MODIFIED="1648018463675" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/frontend" />
+    <SUITE FILE_PATH="coverage/pycharm$newStudent.coverage" NAME="newStudent Coverage Results" MODIFIED="1648018439971" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/frontend" />
+    <SUITE FILE_PATH="coverage/pycharm$initialzeExcelDatabases.coverage" NAME="initialzeExcelDatabases Coverage Results" MODIFIED="1648018426505" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/frontend" />
     <SUITE FILE_PATH="coverage/pycharm$Main.coverage" NAME="Main Coverage Results" MODIFIED="1647232810663" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
-    <SUITE FILE_PATH="coverage/pycharm$report.coverage" NAME="report Coverage Results" MODIFIED="1648016099959" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/frontend" />
+    <SUITE FILE_PATH="coverage/pycharm$report.coverage" NAME="report Coverage Results" MODIFIED="1648018454481" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/frontend" />
     <SUITE FILE_PATH="coverage/370_Repo$App.coverage" NAME="App Coverage Results" MODIFIED="1647941604771" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/frontend" />
     <SUITE FILE_PATH="coverage/370_Repo$WorkbookInitializer__1_.coverage" NAME="WorkbookInitializer (1) Coverage Results" MODIFIED="1647909207770" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend/logic" />
     <SUITE FILE_PATH="coverage/PyCharm$WorkbookInitializer.coverage" NAME="WorkbookInitializer Coverage Results" MODIFIED="1646865885954" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
     <SUITE FILE_PATH="coverage/370_Repo$Main.coverage" NAME="Main Coverage Results" MODIFIED="1647230816569" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
     <SUITE FILE_PATH="coverage/370_Repo$WorkbookInitializer.coverage" NAME="WorkbookInitializer Coverage Results" MODIFIED="1647216462466" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
     <SUITE FILE_PATH="coverage/pycharm$App.coverage" NAME="App Coverage Results" MODIFIED="1648012963666" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/frontend" />
+    <SUITE FILE_PATH="coverage/pycharm$home__1_.coverage" NAME="home (1) Coverage Results" MODIFIED="1648018405734" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/frontend" />
   </component>
 </project>

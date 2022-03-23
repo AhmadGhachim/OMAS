@@ -116,7 +116,7 @@ def UploadAction(event=None):
 
 
 button_image_3 = PhotoImage(
-    file=relative_to_assets("button_3.png"))
+    file=relative_to_assets("DnD.png"))
 button_3 = Button(
     image=button_image_3,
     borderwidth=0,

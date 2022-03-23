@@ -2,6 +2,10 @@ import os.path
 import tkinter as tk
 from tkinter.filedialog import askopenfile
 
+import sys
+
+sys.path.append('..')
+
 from backend import Main
 from backend.DataProcessor import DataProcessor
 

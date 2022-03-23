@@ -3,6 +3,9 @@ import os
 import openpyxl
 from openpyxl.styles import Font
 
+path = os.path.abspath(os.path.pardir)
+path = path.replace("\\", "/", path.count("\\"))
+
 def workbook_initializer(class_name: str, start_end_month: tuple, class_list_path: str):
     """
     Creates an empty workbook with student names, with a sheet for each month.
@@ -48,10 +51,10 @@ def workbook_initializer(class_name: str, start_end_month: tuple, class_list_pat
             count += 1
     wb._active_sheet_index = 0
     try:
-        wb.save("Excel files/" + class_name + ".xlsx")
+        wb.save(path + "/backend/Excel files/" + class_name + ".xlsx")
     except FileNotFoundError:
-        os.mkdir("Excel files")
-        wb.save("Excel files/" + class_name + ".xlsx")
+        os.mkdir(path + "/backend/Excel files")
+        wb.save(path + "/backend/Excel files/" + class_name + ".xlsx")
 
 if __name__ == '__main__':
     print("Testing WorkbookInitializer")

@@ -1,2 +1,5 @@
 .DS_Store
 backend/backend/__pycache__/
+.vscode/
+backend/__pycache__/
+frontend/__pycache__/

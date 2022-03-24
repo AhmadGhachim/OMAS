@@ -51,10 +51,10 @@ def workbook_initializer(class_name: str, start_end_month: tuple, class_list_pat
             count += 1
     wb._active_sheet_index = 0
     try:
-        wb.save("Excel files/" + class_name + ".xlsx")
+        wb.save(path + "/backend/Excel files/" + class_name + ".xlsx")
     except FileNotFoundError:
-        os.mkdir("Excel files")
-        wb.save("Excel files/" + class_name + ".xlsx")
+        os.mkdir(path + "/backend/Excel files")
+        wb.save(path + "/backend/Excel files/" + class_name + ".xlsx")
 
 def add_student(class_name: str, student_name: str):
     pass

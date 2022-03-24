@@ -56,6 +56,9 @@ def workbook_initializer(class_name: str, start_end_month: tuple, class_list_pat
         os.mkdir("Excel files")
         wb.save("Excel files/" + class_name + ".xlsx")
 
+def add_student(class_name: str, student_name: str):
+    pass
+
 if __name__ == '__main__':
     print("Testing WorkbookInitializer")
     print("\tInitializing data...")

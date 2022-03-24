@@ -4,42 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a31ab06-8605-468e-b66b-8bd913b043b7" name="Changes" comment="Made changes to frontend script &amp; README.md">
-      <change afterPath="$PROJECT_DIR$/backend/Analysis.py" afterDir="false" />
+    <list default="true" id="0a31ab06-8605-468e-b66b-8bd913b043b7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/backend/AddStudent.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Repo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Repo.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/DataProcessor.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/DataProcessor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/backend/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/App.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/backend/asgi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/backend/settings.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/backend/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/backend/wsgi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/db.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/manage.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/first_time.ps1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/logo192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/logo512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/run_regular.ps1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/CutOff.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/DisplayedData.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/File.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/HomePage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/MeetingType.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/reportWebVitals.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/setupTests.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/WorkbookInitializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/WorkbookInitializer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/home.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/home.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +58,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Integration" />
+        <entry key="$PROJECT_DIR$" value="Backend" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -111,15 +82,17 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Venv" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -127,7 +100,7 @@
       <recent name="C:\Users\ahmad\PyCharm" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.App">
+  <component name="RunManager" selected="Python.home">
     <configuration name="App" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Repo" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -216,6 +189,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="home" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Repo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/frontend" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/frontend/home.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -244,9 +239,11 @@
       <item itemvalue="Python.WorkbookInitializer (1)" />
       <item itemvalue="Python.Main" />
       <item itemvalue="Python.WorkbookInitializer" />
+      <item itemvalue="Python.home" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.home" />
         <item itemvalue="Python.App" />
         <item itemvalue="Python.Main" />
       </list>
@@ -265,6 +262,8 @@
       <workItem from="1646351745427" duration="6311000" />
       <workItem from="1646928557825" duration="1901000" />
       <workItem from="1647909175977" duration="8846000" />
+      <workItem from="1648060097723" duration="3138000" />
+      <workItem from="1648096047914" duration="2471000" />
     </task>
     <task id="LOCAL-00001" summary="Created a Django environment under 'omas_backend'">
       <created>1645490481639</created>
@@ -350,8 +349,11 @@
     <option name="LAST_COMMIT_MESSAGE" value="Implemented primitive integration of backend and frontend" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/370_Repo$Main.coverage" NAME="Main Coverage Results" MODIFIED="1647941595261" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
-    <SUITE FILE_PATH="coverage/370_Repo$App.coverage" NAME="App Coverage Results" MODIFIED="1647941604771" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/frontend" />
+    <SUITE FILE_PATH="coverage/370_Repo$Main.coverage" NAME="Main Coverage Results" MODIFIED="1647985350433" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
+    <SUITE FILE_PATH="coverage/PyCharm$WorkbookInitializer.coverage" NAME="WorkbookInitializer Coverage Results" MODIFIED="1646865885954" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
+    <SUITE FILE_PATH="coverage/370_Repo$home.coverage" NAME="home Coverage Results" MODIFIED="1648096418934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/frontend" />
+    <SUITE FILE_PATH="coverage/370_Repo$App.coverage" NAME="App Coverage Results" MODIFIED="1647985234258" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/frontend" />
+    <SUITE FILE_PATH="coverage/370_Repo$WorkbookInitializer.coverage" NAME="WorkbookInitializer Coverage Results" MODIFIED="1647216462466" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
     <SUITE FILE_PATH="coverage/370_Repo$WorkbookInitializer__1_.coverage" NAME="WorkbookInitializer (1) Coverage Results" MODIFIED="1647909207770" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend/logic" />
   </component>
 </project>

@@ -5,7 +5,7 @@ from pathlib import Path
 # Explicit imports to satisfy Flake8
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage, OptionMenu
 from tkinter import filedialog
-from PIL import Image, ImageTk
+# from Pillow import Image, ImageTk
 
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH = OUTPUT_PATH / Path("./assets")
@@ -14,24 +14,23 @@ ASSETS_PATH = OUTPUT_PATH / Path("./assets")
 def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
 
+
 window = Tk()
 
-
 window.geometry("1500x1000")
-window.configure(bg = "#FFFFFF")
-
+window.configure(bg="#FFFFFF")
 
 canvas = Canvas(
     window,
-    bg = "#FFFFFF",
-    height = 1000,
-    width = 1500,
-    bd = 0,
-    highlightthickness = 0,
-    relief = "ridge"
+    bg="#FFFFFF",
+    height=1000,
+    width=1500,
+    bd=0,
+    highlightthickness=0,
+    relief="ridge"
 )
 
-canvas.place(x = 0, y = 0)
+canvas.place(x=0, y=0)
 canvas.create_text(
     80.0,
     88.0,
@@ -41,7 +40,7 @@ canvas.create_text(
     font=("Roboto", 72 * -1)
 )
 
-serviceFile_Options= ["Zoom", "Webex", "Teams"]
+serviceFile_Options = ["Zoom", "Webex", "Teams"]
 value_inside = tkinter.StringVar(window)
 value_inside.set("Select an Option")
 serviceFile = OptionMenu(
@@ -109,6 +108,8 @@ canvas.create_text(
     font=("Roboto", 24 * -1)
 )
 check = 'check-mark-button_2705.png'
+
+
 def UploadAction(event=None):
     filename = filedialog.askopenfilename()
     print('Selected:', filename)
@@ -228,4 +229,3 @@ button_7.place(
 )
 window.resizable(False, False)
 window.mainloop()
-

@@ -7,6 +7,8 @@ from pathlib import Path
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage, OptionMenu, Toplevel, Frame
 from tkinter import filedialog
 from PIL import Image, ImageTk
+from sys import exit
+from tkinter import messagebox
 
 import backend.DataProcessor
 from backend.DataProcessor import DataProcessor
@@ -122,26 +124,26 @@ class HomeScreen(Frame):
             if filename:
                 print('Selected:', filename)
                 self.filename = filename
-                button_image_3.configure(file=relative_to_assets("check-mark-button_2705.png"))
+                uploadButtonImage.configure(file=relative_to_assets("check-mark-button_2705.png"))
 
-        global button_image_3
-        button_image_3 = PhotoImage(
+        global uploadButtonImage
+        uploadButtonImage = PhotoImage(
             file=relative_to_assets("DnD.png"))
-        button_3 = Button(
-            image=button_image_3,
+        uploadButton = Button(
+            image=uploadButtonImage,
             borderwidth=0,
             highlightthickness=0,
             text='Open',
             command=UploadAction,
             relief="flat"
         )
-        button_3.place(
+        uploadButton.place(
             x=865.0,
             y=426.0,
             width=555.0,
             height=298.0
         )
-
+        #What deos this button do LoL
         global button_image_4
         button_image_4 = PhotoImage(
             file=relative_to_assets("button_4.png"))
@@ -162,18 +164,18 @@ class HomeScreen(Frame):
         # import the InitializeExcelDatabases class
         from initialzeExcelDatabases import InitializeExcelDatabases
 
-        global button_image_5
-        button_image_5 = PhotoImage(
+        global excelDatabaseNav_Image
+        excelDatabaseNav_Image = PhotoImage(
             file=relative_to_assets("button_5.png"))
-        button_5 = Button(
-            image=button_image_5,
+        excelDatabaseNav = Button(
+            image=excelDatabaseNav_Image,
             borderwidth=0,
             highlightthickness=0,
             command=lambda: master.switch_frame(InitializeExcelDatabases),
 
             relief="flat"
         )
-        button_5.place(
+        excelDatabaseNav.place(
             x=1175.0,
             y=88.0,
             width=260.0,
@@ -202,26 +204,26 @@ class HomeScreen(Frame):
             font=("Roboto", 24 * -1)
         )
 
-        global button_image_6
-        button_image_6 = PhotoImage(
-            file=relative_to_assets("porcess.png"))
-        button_6 = Button(
-            image=button_image_6,
+        global processButton_Image
+        processButton_Image = PhotoImage(
+            file=relative_to_assets("process.png"))
+        processButton = Button(
+            image=processButton_Image,
             borderwidth=0,
             highlightthickness=0,
             command=lambda: call_data_processor(),
             relief="flat"
         )
 
+
         def call_data_processor(meeting_file: str=None, cut_off: int=0, service_type: str=None):
             if None in [meeting_file, cut_off, service_type]:
-                print("Not all details provided")
-                # TODO: Replace this with an alert
+                tkinter.messagebox.showerror(title="warning", message="Not all details provided")
             else:
                 # backend.DataProcessor.DataProcessor()
                 pass
 
-        button_6.place(
+        processButton.place(
             x=634.0,
             y=833.0,
             width=233.0,
@@ -237,17 +239,17 @@ class HomeScreen(Frame):
             font=("Roboto", 36 * -1)
         )
 
-        global button_image_7
-        button_image_7 = PhotoImage(
+        global newStudentNav_Image
+        newStudentNav_Image = PhotoImage(
             file=relative_to_assets("button_7.png"))
-        button_7 = Button(
-            image=button_image_7,
+        newStudentNav = Button(
+            image=newStudentNav_Image,
             borderwidth=0,
             highlightthickness=0,
-            command=lambda: print("button_7 clicked"),
+            command=lambda: master.switch_frame(InitializeExcelDatabases),
             relief="flat"
         )
-        button_7.place(
+        newStudentNav.place(
             x=1175.0,
             y=164.0,
             width=260.0,

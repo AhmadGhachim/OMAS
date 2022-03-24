@@ -251,7 +251,7 @@ class InitializeExcelDatabases(Frame):
 
         global button_image_9
         button_image_9 = PhotoImage(
-            file=relative_to_assets("porcess.png"))
+            file=relative_to_assets("process.png"))
         button_9 = Button(
             self,
             image=button_image_9,

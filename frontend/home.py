@@ -1,4 +1,5 @@
 import tkinter
+from fileinput import filename
 from pathlib import Path
 
 # from tkinter import *
@@ -7,6 +8,8 @@ from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage, OptionMenu, Top
 from tkinter import filedialog
 from PIL import Image, ImageTk
 
+import backend.DataProcessor
+from backend.DataProcessor import DataProcessor
 
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH = OUTPUT_PATH / Path("./assets")
@@ -19,6 +22,10 @@ def relative_to_assets(path: str) -> Path:
 class HomeScreen(Frame):
     def __init__(self, master):
         Frame.__init__(self, master)
+
+        self.filename = None
+        self.cutoff = None
+        self.meeting_service = None
 
         canvas = Canvas(
             self,
@@ -112,8 +119,10 @@ class HomeScreen(Frame):
 
         def UploadAction(event=None):
             filename = filedialog.askopenfilename()
-            print('Selected:', filename)
-            button_image_3.configure(file=relative_to_assets("check-mark-button_2705.png"))
+            if filename:
+                print('Selected:', filename)
+                self.filename = filename
+                button_image_3.configure(file=relative_to_assets("check-mark-button_2705.png"))
 
         global button_image_3
         button_image_3 = PhotoImage(
@@ -200,9 +209,18 @@ class HomeScreen(Frame):
             image=button_image_6,
             borderwidth=0,
             highlightthickness=0,
-            command=lambda: print("button_6 clicked"),
+            command=lambda: call_data_processor(),
             relief="flat"
         )
+
+        def call_data_processor(meeting_file: str=None, cut_off: int=0, service_type: str=None):
+            if None in [meeting_file, cut_off, service_type]:
+                print("Not all details provided")
+                # TODO: Replace this with an alert
+            else:
+                # backend.DataProcessor.DataProcessor()
+                pass
+
         button_6.place(
             x=634.0,
             y=833.0,

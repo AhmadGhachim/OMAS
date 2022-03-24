@@ -104,7 +104,7 @@ class InitializeExcelDatabases(Frame):
         )
 
         # import the HomeScreen class
-        from home import HomeScreen
+        from HomeScreen import HomeScreen
 
         global button_image_3
         button_image_3 = PhotoImage(

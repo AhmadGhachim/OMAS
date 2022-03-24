@@ -1,7 +1,6 @@
 import tkinter as tk
 
-from home import HomeScreen
-from InitialzeExcelDatabases import InitializeExcelDatabases
+from HomeScreen import HomeScreen
 
 
 class OMAS(tk.Tk):
@@ -10,10 +9,6 @@ class OMAS(tk.Tk):
         self.geometry("1500x1000")
         self.title("OMAS")
         self._frame = None
-        # self.frames = [
-        #       ("initializeExcelWindow", InitializeExcelDatabases),
-        #       ("homeScreen", HomeScreen)
-        # ]
         self.switch_frame(HomeScreen)
 
     def switch_frame(self, frame_class):

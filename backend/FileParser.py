@@ -1,3 +1,11 @@
+import os
+import openpyxl
+from openpyxl.styles import Font
+
+path = os.path.abspath(os.path.pardir)
+path = path.replace("\\", "/", path.count("\\"))
+
+
 class FileParser(object):
     def __init__(self, path: str):
         self.file_path = path  # path to the .csv file
@@ -56,6 +64,7 @@ class FileParser(object):
 
 
 if __name__ == '__main__':
-    fp = FileParser("/Users/xecute/Desktop/370Repo/backend/Test files/test.csv")
+    #fp = FileParser("/Users/xecute/Desktop/370Repo/backend/Test files/test.csv")
+    fp = FileParser(path + "/backend/Test files/test.csv")
     fp.parse_for_teams()
     fp.__output__()

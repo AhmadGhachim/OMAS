@@ -3,8 +3,8 @@
 import os
 import random
 
-from backend.WorkbookInitializer import workbook_initializer
-from backend.DataProcessor import DataProcessor
+from WorkbookInitializer import workbook_initializer
+from DataProcessor import DataProcessor
 
 if "Excel files" not in os.listdir():
     os.mkdir("Excel files")

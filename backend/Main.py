@@ -3,8 +3,8 @@
 import os
 import random
 
-from backend.WorkbookInitializer import workbook_initializer
-from backend.DataProcessor import DataProcessor
+from WorkbookInitializer import workbook_initializer
+from DataProcessor import DataProcessor
 
 
 path = os.path.abspath(os.path.pardir)

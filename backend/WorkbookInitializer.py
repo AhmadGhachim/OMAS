@@ -73,10 +73,16 @@ if __name__ == '__main__':
     print("\tFiles created successfully. Verifying workbook format...")
     test_duration = [['January', 'February', 'March', 'April'], ['September', 'October', 'November', 'December', 'January']]
 
-    wb1 = openpyxl.load_workbook("Excel files/CMPT 370.xlsx")
+    # wb1 = openpyxl.load_workbook("Excel files/CMPT 370.xlsx")
+    # wb1 = openpyxl.load_workbook(os.listdir(path + "/backend/Excel files/CMPT 370.xlsx"))
+    #wb1 = openpyxl.load_workbook(os.listdir(path + "/backend/Excel files/cmpt370.xlsx"))
+    wb1 = openpyxl.load_workbook(path + "/backend/Excel files/CMPT 370.xlsx")
+    # wb1 = os.listdir(path + "/backend/Excel files/CMPT 370.xlsx")
     assert wb1.sheetnames == ['January', 'February', 'March', 'April'], "Sheet range incorrect (months in the same year)"
 
-    wb1 = openpyxl.load_workbook("Excel files/MATH 211.xlsx")
+    # wb1 = openpyxl.load_workbook("Excel files/MATH 211.xlsx")
+    #wb1 = os.listdir(path + "/backend/Excel files/MATH 211.xlsx")
+    wb1 = openpyxl.load_workbook(path + "/backend/Excel files/MATH 211.xlsx")
     assert wb1.sheetnames == ['September', 'October', 'November', 'December', 'January'], "Sheet range incorrect (months in consecutive years)"
     print("\tPassed both tests")
 

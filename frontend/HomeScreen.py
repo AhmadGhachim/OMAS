@@ -1,12 +1,18 @@
 import tkinter
+from fileinput import filename
 from pathlib import Path
+import sys
+
+sys.path.append("../backend")
+
 # from tkinter import *
 # Explicit imports to satisfy Flake8
-from tkinter import Canvas, Entry, Button, PhotoImage, OptionMenu, Frame
+from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage, OptionMenu, Toplevel, Frame
 from tkinter import filedialog
-from tkinter import messagebox
+from PIL import Image, ImageTk
 
-import NewStudent
+import backend.DataProcessor
+from backend.DataProcessor import DataProcessor
 
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH = OUTPUT_PATH / Path("./assets")
@@ -44,7 +50,7 @@ class HomeScreen(Frame):
             font=("Roboto", 72 * -1)
         )
 
-        serviceFile_Options = ["Zoom", "Webex", "Teams"]
+        serviceFile_Options= ["Zoom", "Webex", "Teams"]
         value_inside = tkinter.StringVar(self)
         value_inside.set("Select an Option")
         serviceFile = OptionMenu(
@@ -138,7 +144,7 @@ class HomeScreen(Frame):
             width=555.0,
             height=298.0
         )
-        # What deos this button do LoL
+
         global button_image_4
         button_image_4 = PhotoImage(
             file=relative_to_assets("button_4.png"))

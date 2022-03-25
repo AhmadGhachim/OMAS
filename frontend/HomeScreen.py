@@ -217,7 +217,7 @@ class HomeScreen(Frame):
             relief="flat"
         )
 
-        def call_data_processor(meeting_file: str = None, cut_off: int = 0, service_type: str = None):
+        def call_data_processor(meeting_file: str = None, cut_off: int = None, service_type: str = None):
             if None in [meeting_file, cut_off, service_type]:
                 tkinter.messagebox.showerror(title="warning", message="Not all details provided")
             else:

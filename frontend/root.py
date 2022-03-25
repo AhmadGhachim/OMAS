@@ -1,7 +1,7 @@
 import tkinter as tk
 
-from home import HomeScreen
-from initialzeExcelDatabases import InitializeExcelDatabases
+from HomeScreen import HomeScreen
+from InitialzeExcelDatabases import InitializeExcelDatabases
 
 class OMAS(tk.Tk):
       def __init__(self):

@@ -1,6 +1,9 @@
 import tkinter
 from fileinput import filename
 from pathlib import Path
+import sys
+
+sys.path.append("../backend")
 
 # from tkinter import *
 # Explicit imports to satisfy Flake8
@@ -8,8 +11,7 @@ from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage, OptionMenu, Top
 from tkinter import filedialog
 from PIL import Image, ImageTk
 
-import backend.DataProcessor
-from backend.DataProcessor import DataProcessor
+from DataProcessor import DataProcessor
 
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH = OUTPUT_PATH / Path("./assets")
@@ -47,6 +49,9 @@ class HomeScreen(Frame):
             font=("Roboto", 72 * -1)
         )
 
+
+
+
         serviceFile_Options= ["Zoom", "Webex", "Teams"]
         value_inside = tkinter.StringVar(self)
         value_inside.set("Select an Option")
@@ -62,6 +67,7 @@ class HomeScreen(Frame):
             height=40.0
         )
 
+
         # button_image_2 = PhotoImage(
         #     file=relative_to_assets("button_2.png"))
         cutOff = Entry(
@@ -69,7 +75,6 @@ class HomeScreen(Frame):
             # image=button_image_2,
             borderwidth=0,
             highlightthickness=2,
-            # command=lambda: print("button_2 clicked"),
             # relief="flat"
 
         )
@@ -79,6 +84,7 @@ class HomeScreen(Frame):
             width=320.0,
             height=40.0
         )
+
 
         canvas.create_text(
             91.0,
@@ -202,6 +208,27 @@ class HomeScreen(Frame):
             font=("Roboto", 24 * -1)
         )
 
+
+
+        from report import Report
+
+        def call_data_processor():
+            self.cutoff = cutOff.get()
+            self.meeting_service = value_inside.get()
+
+            meeting_file = self.filename
+            cut_off = self.cutoff
+            service_type = self.meeting_service
+
+            if None in [meeting_file, cut_off, service_type]:
+                print("Not all details provided")
+                # TODO: Replace this with an alert
+            else:
+                # DataProcessor()
+                master.switch_frame(Report)
+
+
+
         global button_image_6
         button_image_6 = PhotoImage(
             file=relative_to_assets("porcess.png"))
@@ -209,18 +236,11 @@ class HomeScreen(Frame):
             image=button_image_6,
             borderwidth=0,
             highlightthickness=0,
-            command=lambda: call_data_processor(),
+            command=call_data_processor,
             relief="flat"
         )
 
-        def call_data_processor(meeting_file: str=None, cut_off: int=0, service_type: str=None):
-            if None in [meeting_file, cut_off, service_type]:
-                print("Not all details provided")
-                # TODO: Replace this with an alert
-            else:
-                # backend.DataProcessor.DataProcessor()
-                pass
-
+       
         button_6.place(
             x=634.0,
             y=833.0,

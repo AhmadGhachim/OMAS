@@ -8,6 +8,9 @@ import MathFunctions as MathFunctions
 from FileParser import FileParser
 import ExcelFunctions as ExcelFunctions
 
+path = os.path.abspath(os.path.pardir)
+path = path.replace("\\", "/", path.count("\\"))
+
 original_months = ['January', 'February', 'March', 'April', 'May', 'June',
                        'July', 'August', 'September', 'October', 'November', 'December']
 
@@ -59,11 +62,11 @@ class DataProcessor(object):
         :param meeting_service: string representing the name of the meeting service
         :return: None
         """
-        if meeting_service == 'teams':
+        if meeting_service == 'Teams':
             self.__file_parser.parse_for_teams()
-        elif meeting_service == 'zoom':
+        elif meeting_service == 'Zoom':
             self.__file_parser.parse_for_zoom()
-        elif meeting_service == 'webex':
+        elif meeting_service == 'Webex':
             self.__file_parser.parse_for_webex()
         else:
             raise ValueError("Specified meeting service is currently not supported")

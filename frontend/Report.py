@@ -102,7 +102,7 @@ class Report(Frame):
         )
 
         # import HomeScreen class
-        from home import HomeScreen
+        from HomeScreen import HomeScreen
 
         # create 'go back' button
         global goBack_button_image

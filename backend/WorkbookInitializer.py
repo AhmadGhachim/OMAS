@@ -64,21 +64,24 @@ if __name__ == '__main__':
     print("Testing WorkbookInitializer")
     print("\tInitializing data...")
     test_classes = [x[0:-4] for x in os.listdir("Class List") if x[-4:] == ".txt"]
-    test_start_end_months = [("January", "April"), ("September", "January")]
+    test_start_end_months = [("January", "April"), ("September", "January"), ("July", "June")]
     test_class_lists = ["Class List/" + x + ".txt" for x in test_classes]
 
     print("\tRunning function...")
     for class_name_item, start_end, class_list_item in zip(test_classes, test_start_end_months, test_class_lists):
+        print(class_name_item, start_end, class_list_item)
         workbook_initializer(class_name_item, start_end, class_list_item)
 
     print("\tFiles created successfully. Verifying workbook format...")
-    test_duration = [['January', 'February', 'March', 'April'], ['September', 'October', 'November', 'December', 'January']]
+    test_duration = [['January', 'February', 'March', 'April'], ['September', 'October', 'November', 'December', 'January'],
+                     ['July', 'August', 'September', 'October', 'November', 'December', 'January', 'February', 'March',
+                      'April', 'May', 'June']]
 
     wb1 = openpyxl.load_workbook(path + "/backend/Excel files/CMPT 370.xlsx")
-    assert wb1.sheetnames == ['January', 'February', 'March', 'April'], "Sheet range incorrect (months in the same year)"
+    assert wb1.sheetnames == test_duration[1], "Sheet range incorrect (months in the same year)"
 
     wb1 = openpyxl.load_workbook(path + "/backend/Excel files/MATH 211.xlsx")
-    assert wb1.sheetnames == ['September', 'October', 'November', 'December', 'January'], "Sheet range incorrect (months in consecutive years)"
+    assert wb1.sheetnames == test_duration[2], "Sheet range incorrect (months in consecutive years)"
     print("\tPassed both tests")
 
     print("\tDeleting test workbooks...")

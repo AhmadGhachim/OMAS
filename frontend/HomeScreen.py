@@ -1,3 +1,4 @@
+import os.path
 import tkinter
 from fileinput import filename
 from pathlib import Path
@@ -16,6 +17,9 @@ from backend.DataProcessor import DataProcessor
 
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH = OUTPUT_PATH / Path("./assets")
+
+path = os.path.abspath(os.path.pardir)
+path = path.replace("\\", "/", path.count("\\"))
 
 
 def relative_to_assets(path: str) -> Path:
@@ -213,16 +217,22 @@ class HomeScreen(Frame):
             image=processButton_Image,
             borderwidth=0,
             highlightthickness=0,
-            command=lambda: call_data_processor(),
+            command=lambda: call_data_processor(self.filename, int(cutOff.get()), value_inside.get()),
             relief="flat"
         )
 
+        from Report import Report
+
         def call_data_processor(meeting_file: str = None, cut_off: int = None, service_type: str = None):
+
             if None in [meeting_file, cut_off, service_type]:
                 tkinter.messagebox.showerror(title="warning", message="Not all details provided")
             else:
-                # backend.DataProcessor.DataProcessor()
-                pass
+                dp = backend.DataProcessor.DataProcessor(path + "/backend/Excel files/CMPT 370.xlsx", meeting_file, service_type, 45, cut_off)
+                dp.output_to_workbook()
+                dp.output_to_text_file()
+                dp.output_to_console()
+                master.switch_frame(Report)
 
         processButton.place(
             x=634.0,

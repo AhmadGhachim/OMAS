@@ -12,8 +12,7 @@ from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage, OptionMenu, Top
 from tkinter import filedialog
 from PIL import Image, ImageTk
 
-import backend.DataProcessor
-from backend.DataProcessor import DataProcessor
+from DataProcessor import DataProcessor
 
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH = OUTPUT_PATH / Path("./assets")

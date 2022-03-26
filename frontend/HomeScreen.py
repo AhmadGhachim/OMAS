@@ -14,8 +14,7 @@ from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage, OptionMenu, Top
 from tkinter import filedialog
 from PIL import Image, ImageTk
 
-import backend.DataProcessor
-from backend.DataProcessor import DataProcessor
+import DataProcessor
 import NewStudent
 
 OUTPUT_PATH = Path(__file__).parent
@@ -130,11 +129,11 @@ class HomeScreen(Frame):
 
         #TODO Add Real Classes
         classOptions= ["Class 1", "Class 2"]
-        value_inside = tkinter.StringVar(self)
-        value_inside.set("Select an Option")
+        value_inside_class = tkinter.StringVar(self)
+        value_inside_class.set("Select an Option")
         classSelect = OptionMenu(
             self,
-            value_inside,
+            value_inside_class,
             *classOptions,
         )
         classSelect.place(
@@ -257,7 +256,8 @@ class HomeScreen(Frame):
             if None in [meeting_file, cut_off, service_type]:
                 tkinter.messagebox.showerror(title="warning", message="Not all details provided")
             else:
-                dp = backend.DataProcessor.DataProcessor(path + "/backend/Excel files/CMPT 370.xlsx", meeting_file, service_type, 45, cut_off)
+                print(service_type)
+                dp = DataProcessor.DataProcessor(path + "/backend/Excel files/CMPT 370.xlsx", meeting_file, service_type, 45, cut_off)
                 dp.output_to_workbook()
                 dp.output_to_text_file()
                 dp.output_to_console()

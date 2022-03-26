@@ -4,7 +4,7 @@ from pathlib import Path
 # Explicit imports to satisfy Flake8
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage, Frame
 
-from frontend.HomeScreen import HomeScreen
+from HomeScreen import HomeScreen
 
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH = OUTPUT_PATH / Path("./assets")

@@ -4,6 +4,8 @@ from fileinput import filename
 from pathlib import Path
 import sys
 
+import ViewRecord
+
 sys.path.append("../backend")
 
 # from tkinter import *
@@ -301,8 +303,7 @@ class HomeScreen(Frame):
             image=viewRecordsHome_Image,
             borderwidth=0,
             highlightthickness=0,
-            #TODO add navigation
-            command=lambda: master.switch_frame(),
+            command=lambda: master.switch_frame(ViewRecord.ViewRecord),
             relief="flat"
         )
         viewRecordsHome.place(

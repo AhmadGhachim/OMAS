@@ -1,8 +1,12 @@
+
+
 from pathlib import Path
 
 # from tkinter import *
 # Explicit imports to satisfy Flake8
-from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
+from tkinter import BOTH, BOTTOM, END, LEFT, RIGHT, Y, Frame, Listbox, Scrollbar, Tk, Canvas, Entry, Text, Button, PhotoImage
+from turtle import window_width
+
 
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH = OUTPUT_PATH / Path("./assets")
@@ -12,93 +16,118 @@ def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
 
 
-window = Tk()
+class Report(Frame):
 
-window.geometry("1500x1000")
-window.configure(bg="#FFFFFF")
+    def __init__(self, master):
+        Frame.__init__(self, master)
 
-canvas = Canvas(
-    window,
-    bg="#FFFFFF",
-    height=1000,
-    width=1500,
-    bd=0,
-    highlightthickness=0,
-    relief="ridge"
-)
+        # create canvas
+        canvas = Canvas(
+            self,
+            bg = "#FFFFFF",
+            height = 1000,
+            width = 1500,
+            bd = 0,
+            highlightthickness = 0,
+            relief = "ridge"
+        )
 
-canvas.place(x=0, y=0)
-button_image_1 = PhotoImage(
-    file=relative_to_assets("button_1.png"))
-button_1 = Button(
-    image=button_image_1,
-    borderwidth=0,
-    highlightthickness=0,
-    command=lambda: print("button_1 clicked"),
-    relief="flat"
-)
-button_1.place(
-    x=599.0,
-    y=1415.0,
-    width=233.0,
-    height=79.0
-)
+        # add canvas to frame
+        canvas.place(x=0, y=0)
 
-button_image_2 = PhotoImage(
-    file=relative_to_assets("export.png"))
-button_2 = Button(
-    image=button_image_2,
-    borderwidth=0,
-    highlightthickness=0,
-    command=lambda: print("button_2 clicked"),
-    relief="flat"
-)
-button_2.place(
-    x=418.0,
-    y=833.0,
-    width=260.0,
-    height=50.0
-)
+        # create 'drop-down' button
+        global drop_down_button_image
+        drop_down_button_image = PhotoImage(
+            file=relative_to_assets("button_1.png"))
+        drop_down_button = Button(
+            self,
+            image=drop_down_button_image,
+            borderwidth=0,
+            highlightthickness=0,
+            command=lambda: print("drop_down_button clicked"),
+            relief="flat"
+        )
 
-button_image_3 = PhotoImage(
-    file=relative_to_assets("viewRecord.png"))
-button_3 = Button(
-    image=button_image_3,
-    borderwidth=0,
-    highlightthickness=0,
-    command=lambda: print("button_3 clicked"),
-    relief="flat"
-)
-button_3.place(
-    x=823.0,
-    y=833.0,
-    width=260.0,
-    height=50.0
-)
+        # add 'drop-down' button to frame
+        drop_down_button.place(
+            x=599.0,
+            y=1415.0,
+            width=233.0,
+            height=79.0
+        )
 
-button_image_4 = PhotoImage(
-    file=relative_to_assets("goBack.png"))
-button_4 = Button(
-    image=button_image_4,
-    borderwidth=0,
-    highlightthickness=0,
-    command=lambda: print("button_4 clicked"),
-    relief="flat"
-)
-button_4.place(
-    x=109.0,
-    y=89.0,
-    width=125.0,
-    height=50.0
-)
+        # create 'export' button
+        global export_button_image
+        export_button_image = PhotoImage(
+            file=relative_to_assets("export.png"))
+        export_button = Button(
+            self,
+            image=export_button_image,
+            borderwidth=0,
+            highlightthickness=0,
+            command=lambda: print("export_button clicked"),
+            relief="flat"
+        )
 
-canvas.create_text(
-    630.0,
-    114.0,
-    anchor="nw",
-    text="Report for CMPT 370",
-    fill="#000000",
-    font=("Inter Medium", 36 * -1)
-)
-window.resizable(False, False)
-window.mainloop()
+        # add 'export' button to frame
+        export_button.place(
+            x=418.0,
+            y=833.0,
+            width=260.0,
+            height=50.0
+        )
+
+        # create 'view record' button
+        global viewRecord_button_image
+        viewRecord_button_image = PhotoImage(
+            file=relative_to_assets("viewRecord.png"))
+        viewRecord_button = Button(
+            self,
+            image=viewRecord_button_image,
+            borderwidth=0,
+            highlightthickness=0,
+            command=lambda: print("viewRecord_button clicked"),
+            relief="flat"
+        )
+
+        # add 'view record' button to frame
+        viewRecord_button.place(
+            x=823.0,
+            y=833.0,
+            width=260.0,
+            height=50.0
+        )
+
+        # import HomeScreen class
+        from HomeScreen import HomeScreen
+
+        # create 'go back' button
+        global goBack_button_image
+        goBack_button_image = PhotoImage(
+            file=relative_to_assets("goBack.png"))
+        goBack_button = Button(
+            self,
+            image=goBack_button_image,
+            borderwidth=0,
+            highlightthickness=0,
+            command=lambda: master.switch_frame(HomeScreen),
+            relief="flat"
+        )
+
+        # add 'go back' button to frame
+        goBack_button.place(
+            x=109.0,
+            y=89.0,
+            width=125.0,
+            height=50.0
+        )
+
+        # write text on canvas
+        canvas.create_text(
+            630.0,
+            114.0,
+            anchor="nw",
+            text="Report for CMPT 370",
+            fill="#000000",
+            font=("Inter Medium", 36 * -1)
+        )

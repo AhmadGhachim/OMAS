@@ -17,6 +17,17 @@ class InitializeExcelDatabases(Frame):
     def __init__(self, master):
         Frame.__init__(self, master)
 
+        self.noOfClasses = 1
+        self.mostFieldDimensionsY = {
+            "canvas_text": 287, 
+            "entry_text": 276, 
+            "start_month": 276, 
+            "end_month": 276, 
+            "uploadClassList": 276, 
+            "addNewClass": 515,
+        }
+
+
         canvas = Canvas(
             self,
             bg="#FFFFFF",
@@ -29,52 +40,101 @@ class InitializeExcelDatabases(Frame):
 
         canvas.place(x=0, y=0)
 
-        global button_image_1
-        button_image_1 = PhotoImage(
-            file=relative_to_assets("uploadList.png"))
-        button_1 = Button(
-            self,
-            image=button_image_1,
-            borderwidth=0,
-            highlightthickness=0,
-            command=lambda: print("button_1 clicked"),
-            relief="flat"
-        )
-        button_1.place(
-            x=1092.0,
-            y=276.0,
-            width=300.0,
-            height=50.0
-        )
 
-        canvas.create_text(
+        # Create new Class Upload field
+        def createNewField():
+
+            if self.noOfClasses > 2:
+                addNewClass_button.place_configure(x=650, y=self.mostFieldDimensionsY["addNewClass"] + 90)
+                self.mostFieldDimensionsY["addNewClass"] += 90
+
+            globals()[f"uploadList_button_image{self.noOfClasses}"] = PhotoImage(
+            file=relative_to_assets("uploadList.png"))
+            globals()[f"uploadList_button{self.noOfClasses}"] = Button(
+                self,
+                image=globals()[f"uploadList_button_image{self.noOfClasses}"],
+                borderwidth=0,
+                highlightthickness=0,
+                command=lambda: print("button_1 clicked"),
+                relief="flat"
+            )
+            globals()[f"uploadList_button{self.noOfClasses}"].place(
+                x=1092.0,
+                y=self.mostFieldDimensionsY["uploadClassList"],
+                width=300.0,
+                height=50.0
+            )
+
+            canvas.create_text(
             109.0,
-            287.0,
+            self.mostFieldDimensionsY["canvas_text"],
             anchor="nw",
-            text="Class 1",
+            text="Class " + str(self.noOfClasses),
             fill="#000000",
             font=("Roboto", 28 * -1)
-        )
+            )
 
-        # entry_image_1 = PhotoImage(
-        #     file=relative_to_assets("entry_1.png"))
-        entry_bg_1 = canvas.create_image(
-            436.0,
-            301.0,
-            # image=entry_image_1
-        )
-        entry_1 = Text(
-            self,
-            bd=0,
-            bg="#FFFFFF",
-            highlightthickness=2
-        )
-        entry_1.place(
-            x=276.0,
-            y=276.0,
-            width=320.0,
-            height=48.0
-        )
+            globals()[f"class_name_entry{self.noOfClasses}"] = Entry(
+                self,
+                bd=0,
+                foreground="#fff",
+                bg="#FFFFFF",
+                fg="#000000",
+                insertbackground="#000000",
+                highlightthickness=2,
+                font=("Roboto", 24 * -1)
+            )
+            globals()[f"class_name_entry{self.noOfClasses}"].place(
+                x=276.0,
+                y=self.mostFieldDimensionsY["entry_text"],
+                width=320.0,
+                height=48.0
+            )
+
+            globals()[f"start_month_dropdown_image{self.noOfClasses}"] = PhotoImage(
+                file=relative_to_assets("dropDown.png"))
+            globals()[f"start_month_dropdown{self.noOfClasses}"] = Button(
+                self,
+                image=globals()[f"start_month_dropdown_image{self.noOfClasses}"],
+                borderwidth=0,
+                highlightthickness=0,
+                command=lambda: print("button_4 clicked"),
+                relief="flat"
+            )
+            globals()[f"start_month_dropdown{self.noOfClasses}"].place(
+                x=628.0,
+                y=self.mostFieldDimensionsY["start_month"],
+                width=200.0,
+                height=50.0
+            )
+
+            globals()[f"end_month_dropdown_image{self.noOfClasses}"] = PhotoImage(
+                file=relative_to_assets("dropDown.png"))
+            globals()[f"end_month_dropdown{self.noOfClasses}"] = Button(
+                self,
+                image=globals()[f"end_month_dropdown_image{self.noOfClasses}"],
+                borderwidth=0,
+                highlightthickness=0,
+                command=lambda: print("button_5 clicked"),
+                relief="flat"
+            )
+            globals()[f"end_month_dropdown{self.noOfClasses}"].place(
+                x=860.0,
+                y=self.mostFieldDimensionsY["start_month"],
+                width=200.0,
+                height=50.0
+            )
+
+            self.noOfClasses += 1
+            self.mostFieldDimensionsY["canvas_text"] += 97
+            self.mostFieldDimensionsY["entry_text"] += 97
+            self.mostFieldDimensionsY["start_month"] += 97
+            self.mostFieldDimensionsY["end_month"] += 97
+            self.mostFieldDimensionsY["uploadClassList"] += 97
+
+
+
+        #########################
 
         canvas.create_text(
             525.0,
@@ -85,18 +145,20 @@ class InitializeExcelDatabases(Frame):
             font=("Inter Medium", 36 * -1)
         )
 
-        global button_image_2
-        button_image_2 = PhotoImage(
+
+        global addNewClass_button_image
+        addNewClass_button_image = PhotoImage(
             file=relative_to_assets("addNewClass.png"))
-        button_2 = Button(
+        addNewClass_button = Button(
             self,
-            image=button_image_2,
+            image=addNewClass_button_image,
             borderwidth=0,
             highlightthickness=0,
-            command=lambda: print("button_2 clicked"),
+            # command=lambda: print("button_2 clicked"),
+            command=createNewField,
             relief="flat"
         )
-        button_2.place(
+        addNewClass_button.place(
             x=650.0,
             y=515.0,
             width=200.0,
@@ -106,157 +168,42 @@ class InitializeExcelDatabases(Frame):
         # import the HomeScreen class
         from HomeScreen import HomeScreen
 
-        global button_image_3
-        button_image_3 = PhotoImage(
+        global goBack_button_image
+        goBack_button_image = PhotoImage(
             file=relative_to_assets("goBack.png"))
-        button_3 = Button(
+        goBack_button = Button(
             self,
-            image=button_image_3,
+            image=goBack_button_image,
             borderwidth=0,
             highlightthickness=0,
             command=lambda: master.switch_frame(HomeScreen),
             relief="flat"
         )
-        button_3.place(
+        goBack_button.place(
             x=109.0,
             y=89.0,
             width=125.0,
             height=50.0
         )
 
-        global button_image_4
-        button_image_4 = PhotoImage(
-            file=relative_to_assets("dropDown.png"))
-        button_4 = Button(
-            self,
-            image=button_image_4,
-            borderwidth=0,
-            highlightthickness=0,
-            command=lambda: print("button_4 clicked"),
-            relief="flat"
-        )
-        button_4.place(
-            x=628.0,
-            y=276.0,
-            width=200.0,
-            height=50.0
-        )
 
-        global button_image_5
-        button_image_5 = PhotoImage(
-            file=relative_to_assets("dropDown.png"))
-        button_5 = Button(
-            self,
-            image=button_image_5,
-            borderwidth=0,
-            highlightthickness=0,
-            command=lambda: print("button_5 clicked"),
-            relief="flat"
-        )
-        button_5.place(
-            x=860.0,
-            y=276.0,
-            width=200.0,
-            height=50.0
-        )
-
-        global button_image_6
-        button_image_6 = PhotoImage(
-            file=relative_to_assets("uploadList.png"))
-        button_6 = Button(
-            self,
-            image=button_image_6,
-            borderwidth=0,
-            highlightthickness=0,
-            command=lambda: print("button_6 clicked"),
-            relief="flat"
-        )
-        button_6.place(
-            x=1092.0,
-            y=373.0,
-            width=300.0,
-            height=50.0
-        )
-
-        canvas.create_text(
-            109.0,
-            384.0,
-            anchor="nw",
-            text="Class 2",
-            fill="#000000",
-            font=("Roboto", 28 * -1)
-        )
-
-        # entry_image_2 = PhotoImage(
-        #     file=relative_to_assets("entry_2.png"))
-        entry_bg_2 = canvas.create_image(
-            436.0,
-            398.0,
-            # image=entry_image_2
-        )
-        entry_2 = Text(
-            self,
-            bd=0,
-            bg="#FFFFFF",
-            highlightthickness=2
-        )
-        entry_2.place(
-            x=276.0,
-            y=373.0,
-            width=320.0,
-            height=48.0
-        )
-
-        global button_image_7
-        button_image_7 = PhotoImage(
-            file=relative_to_assets("dropDown.png"))
-        button_7 = Button(
-            self,
-            image=button_image_7,
-            borderwidth=0,
-            highlightthickness=0,
-            command=lambda: print("button_7 clicked"),
-            relief="flat"
-        )
-        button_7.place(
-            x=628.0,
-            y=373.0,
-            width=200.0,
-            height=50.0
-        )
-
-        global button_image_8
-        button_image_8 = PhotoImage(
-            file=relative_to_assets("dropDown.png"))
-        button_8 = Button(
-            self,
-            image=button_image_8,
-            borderwidth=0,
-            highlightthickness=0,
-            command=lambda: print("button_8 clicked"),
-            relief="flat"
-        )
-        button_8.place(
-            x=860.0,
-            y=373.0,
-            width=200.0,
-            height=50.0
-        )
-
-        global button_image_9
-        button_image_9 = PhotoImage(
+        global process_button_image
+        process_button_image = PhotoImage(
             file=relative_to_assets("process.png"))
-        button_9 = Button(
+        process_button = Button(
             self,
-            image=button_image_9,
+            image=process_button_image,
             borderwidth=0,
             highlightthickness=0,
             command=lambda: print("button_9 clicked"),
             relief="flat"
         )
-        button_9.place(
+        process_button.place(
             x=634.0,
             y=858.0,
             width=233.0,
             height=79.0
         )
+
+        for i in range(2):
+            createNewField()

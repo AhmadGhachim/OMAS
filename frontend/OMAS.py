@@ -10,7 +10,7 @@ class OMAS(tk.Tk):
         self.title("OMAS")
         self._frame = None
         self.switch_frame(HomeScreen)
-        self.bind_all("<Button-1>", lambda event: event.widget.focus_set())
+        # self.bind_all("<Button-1>", lambda event: event.widget.focus_set())
 
     def switch_frame(self, frame_class):
         """Destroys current frame and replaces it with a new one."""

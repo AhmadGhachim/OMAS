@@ -4,7 +4,7 @@ from pathlib import Path
 # Explicit imports to satisfy Flake8
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage, Frame
 
-from frontend.HomeScreen import HomeScreen
+import HomeScreen
 
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH = OUTPUT_PATH / Path("./assets")
@@ -68,7 +68,7 @@ class NewStudent(Frame):
             image=button_image_2,
             borderwidth=0,
             highlightthickness=0,
-            command=lambda: master.switch_frame(HomeScreen),
+            command=lambda: master.switch_frame(HomeScreen.HomeScreen),
             relief="flat"
         )
         button_2.place(

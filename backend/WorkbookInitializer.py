@@ -74,7 +74,8 @@ def add_student(class_name: str, student_name: str):
     """
     student_name = student_name.upper()
     names = list()
-    wb = openpyxl.load_workbook("Excel files/" + class_name + ".xlsx")  # Open class workbook
+    wb = openpyxl.load_workbook(path + "/backend/Excel files/" + class_name + ".xlsx")  # Open class workbook
+    active_sheet = wb._active_sheet_index
     for x in range(len(wb.sheetnames)):
         wb._active_sheet_index = x
         sheet = wb.active
@@ -92,7 +93,8 @@ def add_student(class_name: str, student_name: str):
 
         sheet.insert_rows(index + 2, 1)
         sheet.cell(index + 2, 1).value = student_name
-    wb.save("Excel files/" + class_name + ".xlsx")
+    wb._active_sheet_index = active_sheet
+    wb.save(path + "/backend/Excel files/" + class_name + ".xlsx")
     wb.close()
 
 if __name__ == '__main__':

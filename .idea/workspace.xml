@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a31ab06-8605-468e-b66b-8bd913b043b7" name="Changes" comment="Printing cutoff time and meeting service type to console">
-      <change afterPath="$PROJECT_DIR$/backend/Test files/zoom_meet_file2.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/csv-plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csv-plugin.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/FileParser.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/FileParser.py" afterDir="false" />
-    </list>
+    <list default="true" id="0a31ab06-8605-468e-b66b-8bd913b043b7" name="Changes" comment="Edited parse_for_zooms()" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -294,7 +289,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646868023834</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Edited parse_for_zooms()">
+      <created>1648436154280</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1648436154281</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -319,6 +321,7 @@
     <MESSAGE value="Changes:&#10;- Fixed the Cutoff styling" />
     <MESSAGE value="Changes:&#10;- Changed the width of the file upload box from 30% to 35%" />
     <MESSAGE value="Implemented primitive integration of backend and frontend" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented primitive integration of backend and frontend" />
+    <MESSAGE value="Edited parse_for_zooms()" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edited parse_for_zooms()" />
   </component>
 </project>

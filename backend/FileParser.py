@@ -81,10 +81,8 @@ class FileParser(object):
        # self.date = self.data[0][3]['Join Time & Date']
        # self.start_time = self.data[0][4]['Leave Time & Date']
         self.date = self.data[0][3]
-        self.start_time = self.data[0][3]
+        self.start_time = self.data[0][3].update(self.data[0][5])
 
-     #   self.leave_time = self.data[0][4] # Meeting leave time. Format -> 00:34:12
-     #   self.leave_date = self.data[0][4] # Meeting leave date. Format -> 05/01/22
 
 #####################################
     def parse_for_webex(self):

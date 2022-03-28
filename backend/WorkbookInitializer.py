@@ -69,7 +69,6 @@ if __name__ == '__main__':
 
     print("\tRunning function...")
     for class_name_item, start_end, class_list_item in zip(test_classes, test_start_end_months, test_class_lists):
-        print(class_name_item, start_end, class_list_item)
         workbook_initializer(class_name_item, start_end, class_list_item)
 
     print("\tFiles created successfully. Verifying workbook format...")
@@ -87,6 +86,7 @@ if __name__ == '__main__':
     print("\tDeleting test workbooks...")
     for class_name_item in test_classes:
         os.remove("Excel files/" + class_name_item +".xlsx")
+    os.removedirs("Excel files")
 
     print("** End of testing **")
 

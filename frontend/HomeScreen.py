@@ -14,7 +14,7 @@ from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage, OptionMenu, Top
 from tkinter import filedialog
 from PIL import Image, ImageTk
 
-import DataProcessor
+from backend.DataProcessor import DataProcessor
 import NewStudent
 
 OUTPUT_PATH = Path(__file__).parent
@@ -55,7 +55,6 @@ class HomeScreen(Frame):
             fill="#000000",
             font=("Roboto", 72 * -1)
         )
-
 
 
         meetingDuration = Entry(
@@ -127,14 +126,16 @@ class HomeScreen(Frame):
             font=("Roboto", 24 * -1)
         )
 
-        #TODO Add Real Classes
-        classOptions= ["Class 1", "Class 2"]
+        try:
+            class_options= [files[:-5] for files in os.listdir(path+"/backend/Excel files") if files[-5:] == ".xlsx"]
+        except FileNotFoundError:
+            class_options = [None]
         value_inside_class = tkinter.StringVar(self)
         value_inside_class.set("Select an Option")
         classSelect = OptionMenu(
             self,
             value_inside_class,
-            *classOptions,
+            *class_options,
         )
         classSelect.place(
             x=470.0,
@@ -236,6 +237,17 @@ class HomeScreen(Frame):
             font=("Inter Regular", 24 * -1)
         )
 
+        if class_options == [None]:
+            canvas.create_text(
+                91.0,
+                320.0,
+                anchor="nw",
+                text="Please click on 'Initialze Excel Databases'",
+                fill='#ff0000',
+                font=("Inter Regular", 24 * -1)
+            )
+
+
 
 
         global processButton_Image
@@ -245,23 +257,35 @@ class HomeScreen(Frame):
             image=processButton_Image,
             borderwidth=0,
             highlightthickness=0,
-            command=lambda: call_data_processor(self.filename, int(cutOff.get()), value_inside.get()),
+            command=lambda: call_data_processor(value_inside_class.get(), self.filename, meetingDuration.get(), cutOff.get(), value_inside.get()),
             relief="flat"
         )
 
         from Report import Report
 
-        def call_data_processor(meeting_file: str = None, cut_off: int = None, service_type: str = None):
-
-            if None in [meeting_file, cut_off, service_type]:
-                tkinter.messagebox.showerror(title="warning", message="Not all details provided")
+        def call_data_processor(class_name: str = None, meeting_file: str = None, duration = None, cut_off= None, service_type: str = None):
+            if class_options == [None]:
+                tkinter.messagebox.showerror(title="Warning", message="Excel databases not initialized")
             else:
-                print(service_type)
-                dp = DataProcessor.DataProcessor(path + "/backend/Excel files/CMPT 370.xlsx", meeting_file, service_type, 45, cut_off)
-                dp.output_to_workbook()
-                dp.output_to_text_file()
-                dp.output_to_console()
-                master.switch_frame(Report)
+                try:
+                    cut_off = int(cut_off)
+                except ValueError:
+                    tkinter.messagebox.showerror(title="Incorrect cutoff duration", message="Cutoff duration should be a number")
+
+                try:
+                    duration = int(duration)
+                except ValueError:
+                    tkinter.messagebox.showerror(title="Incorrect meeting duration", message="Meeting duration should be a number")
+
+                if None in [class_name, meeting_file, cut_off, service_type]:
+                    tkinter.messagebox.showerror(title="Warning", message="Not all details provided")
+                else:
+                    print(service_type)
+                    dp = DataProcessor(path + "/backend/Excel files/"+ class_name +".xlsx", meeting_file, service_type, duration, cut_off)
+                    dp.output_to_workbook()
+                    dp.output_to_text_file()
+                    dp.output_to_console()
+                    master.switch_frame(Report)
 
         processButton.place(
             x=560.0,
@@ -317,7 +341,7 @@ class HomeScreen(Frame):
             if input.isdigit():
                 return True
 
-            elif input is "":
+            elif input == "":
                 return True
 
             else:

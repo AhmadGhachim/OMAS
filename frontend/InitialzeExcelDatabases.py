@@ -11,13 +11,14 @@ import sys
 
 sys.path.append("../backend")
 
-from WorkbookInitializer import workbook_initializer
+from backend.WorkbookInitializer import workbook_initializer
 
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH = OUTPUT_PATH / Path("./assets")
 
 
-month_Options= ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "Decemeber"]
+month_Options= ['January', 'February', 'March', 'April', 'May', 'June',
+                       'July', 'August', 'September', 'October', 'November', 'December']
 
 
 def relative_to_assets(path: str) -> Path:
@@ -36,7 +37,7 @@ class InitializeExcelDatabases(Frame):
             "start_month": 276, 
             "end_month": 276, 
             "uploadClassList": 276, 
-            "addNewClass": 515,
+            "addNewClass": 400,
         }
 
 
@@ -58,7 +59,7 @@ class InitializeExcelDatabases(Frame):
             525.0,
             109.0,
             anchor="nw",
-            text="Initialze Excel Databases",
+            text="Initialize Excel Databases",
             fill="#000000",
             font=("Inter Medium", 36 * -1)
         )
@@ -78,7 +79,7 @@ class InitializeExcelDatabases(Frame):
         )
         addNewClass_button.place(
             x=650.0,
-            y=515.0,
+            y=self.mostFieldDimensionsY["addNewClass"],
             width=200.0,
             height=50.0
         )
@@ -134,7 +135,7 @@ class InitializeExcelDatabases(Frame):
             image=process_button_image,
             borderwidth=0,
             highlightthickness=0,
-            command=initializeWorkbookDatabase,
+            command=lambda: initializeWorkbookDatabase(),
             relief="flat"
         )
         process_button.place(
@@ -150,11 +151,14 @@ class InitializeExcelDatabases(Frame):
                 messagebox.showerror(title="warning", message="You cannot add another field while current one has not been filled completely")
                 return
 
-            if self.noOfClasses > 2:
+            if self.noOfClasses >= 1:
                 addNewClass_button.place_configure(x=650, y=self.mostFieldDimensionsY["addNewClass"] + 90)
                 self.mostFieldDimensionsY["addNewClass"] += 90
 
             self.noOfClasses += 1
+
+            if self.noOfClasses == 5:
+                addNewClass_button.place_forget()
 
             # to upload class list
             def UploadAction():

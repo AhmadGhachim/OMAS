@@ -62,6 +62,6 @@ class FileParser(object):
 
 
 if __name__ == '__main__':
-    fp = FileParser(path + "/backend/Test files/test.csv")
+    fp = FileParser(path + "Project\Test files\meet_file11.csv")
     fp.parse_for_teams()
     fp.__output__()

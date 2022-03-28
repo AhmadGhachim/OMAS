@@ -20,8 +20,6 @@ class ViewRecord(Frame):
     def __init__(self, master):
         Frame.__init__(self, master)
 
-
-
         canvas = Canvas(
             self,
             bg = "#FFFFFF",

@@ -9,11 +9,14 @@ from tkinter import messagebox
 
 import sys
 
+from backend import WorkbookInitializer
+from backend.WorkbookInitializer import workbook_initializer
+
 sys.path.append("../backend")
 sys.path.append("../Test files")
 
 # from WorkbookInitializer import workbook_initializer
-import WorkbookInitializer
+
 
 
 OUTPUT_PATH = Path(__file__).parent

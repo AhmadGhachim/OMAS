@@ -1,10 +1,12 @@
 import os
 import tkinter
+import tkinter
 from pathlib import Path
 
 # from tkinter import *
 # Explicit imports to satisfy Flake8
-from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage, Frame
+from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage, Frame, OptionMenu, messagebox
+from tkinter import *
 
 import HomeScreen
 
@@ -14,7 +16,7 @@ ASSETS_PATH = OUTPUT_PATH / Path("./assets")
 
 def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
-
+classOptions= ["Class 1", "Class 2"]
 
 class NewStudent(Frame):
 
@@ -29,6 +31,16 @@ class NewStudent(Frame):
         except FileNotFoundError:
             tkinter.messagebox.showerror(title="Error", message="Please run 'Initialize Excel Databases' first")
 
+        self.noOfStudents = 0
+        self.mostFieldDimensionsY = {
+            "student_count": 287,
+            "entry_name": 276,
+            "select_class": 276,
+            "delete_button": 276,
+            "addNewStudent": 270,
+        }
+
+
         canvas = Canvas(
             self,
             bg="#FFFFFF",
@@ -40,34 +52,16 @@ class NewStudent(Frame):
         )
 
         canvas.place(x=0, y=0)
+        self.createNewStudent(canvas)
 
         canvas.place(x=0, y=0)
         canvas.create_text(
-
             630.0,
             114.0,
             anchor="nw",
             text="Add new student",
             fill="#000000",
             font=("Inter Medium", 36 * -1)
-        )
-
-        global button_image_1
-        button_image_1 = PhotoImage(
-            file=relative_to_assets("addStudent.png"))
-        button_1 = Button(
-            self,
-            image=button_image_1,
-            borderwidth=0,
-            highlightthickness=0,
-            command=lambda: print("button_1 clicked"),
-            relief="flat"
-        )
-        button_1.place(
-            x=620.0,
-            y=515.0,
-            width=260.0,
-            height=50.0
         )
 
         global button_image_2
@@ -88,120 +82,143 @@ class NewStudent(Frame):
             height=50.0
         )
 
-        canvas.create_text(
+        global addStudent_image
+        addStudent_image = PhotoImage(
+            file=relative_to_assets("addStudent.png"))
+        global addStudent
+        addStudent = Button(
+            self,
+            image=addStudent_image,
+            borderwidth=0,
+            highlightthickness=0,
+            command=lambda: self.createNewStudent(canvas),
+            relief="flat"
+        )
+        addStudent.place(
+            x=620.0,
+            y=self.mostFieldDimensionsY["addNewStudent"],
+            width=260.0,
+            height=50.0
+        )
 
+
+        def AddStudentProcessButton():
+            pass
+
+        global processButton_Image
+        processButton_Image = PhotoImage( file=relative_to_assets("process.png"))
+        processButton = Button(
+            image=processButton_Image,
+            borderwidth=0,
+            highlightthickness=0,
+            command=lambda: AddStudentProcessButton(),
+            relief="flat"
+        )
+        processButton.place(
+            x=610.0,
+            y=800.0,
+            width=233.0,
+            height=79.0
+        )
+
+
+
+    def createNewStudent(self, canvas):
+        if self.noOfStudents > 0 and (None in [globals()[f"entry_name{self.noOfStudents}"]]or globals()[f"select_class{self.noOfStudents}"].get() not in classOptions):
+            messagebox.showerror(title="warning", message="You cannot add another field while current one has not been filled completely")
+            return
+
+        if self.noOfStudents >= 1:
+            addStudent.place_configure(x=610, y=self.mostFieldDimensionsY["addNewStudent"] + 90)
+
+        self.noOfStudents += 1
+
+        if self.noOfStudents == 5:
+            addStudent.place_forget()
+
+        canvas.create_text(
             109.0,
-            287.0,
+            self.mostFieldDimensionsY["student_count"],
             anchor="nw",
-            text="Student 1",
+            text="Student " + str(self.noOfStudents),
             fill="#000000",
             font=("Roboto", 28 * -1)
         )
 
-        global entry_image_1
-        entry_image_1 = PhotoImage(
-            file=relative_to_assets("entry_1.png"))
-        entry_bg_1 = canvas.create_image(
-            721.0,
-            301.0,
-            image=entry_image_1
-        )
-        entry_1 = Text(
+        globals()[f"entry_name{self.noOfStudents}"] = Entry(
             self,
+            borderwidth=1,
             bd=0,
             bg="#FFFFFF",
-            highlightthickness=1
+            fg="#000000",
+            insertbackground="#000000",
+            highlightcolor="#fff",
+            highlightthickness=2,
+            relief="solid",
+            font=("Roboto", 20 * -1)
         )
-        entry_1.place(
+        globals()[f"entry_name{self.noOfStudents}"].place(
             x=276.0,
-            y=276.0,
-            width=890.0,
+            y=self.mostFieldDimensionsY["entry_name"],
+            width=600.0,
             height=48.0
         )
+        globals()[f"select_class{self.noOfStudents}"] = StringVar(self)
+        globals()[f"select_class{self.noOfStudents}"].set("Select Class")
 
-        global button_image_3
-        button_image_3 = PhotoImage(
-            file=relative_to_assets("dropDown.png"))
-        button_3 = Button(
+        globals()[f"select_class_dropdown{self.noOfStudents}"] = OptionMenu(
             self,
-            image=button_image_3,
-            borderwidth=0,
-            highlightthickness=0,
-            command=lambda: print("button_3 clicked"),
-            relief="flat"
+            globals()[f"select_class{self.noOfStudents}"],
+            #todo add real classes
+            *classOptions,
         )
-        button_3.place(
-            x=1192.0,
-            y=276.0,
+        globals()[f"select_class_dropdown{self.noOfStudents}"].place(
+            x=930.0,
+            y=self.mostFieldDimensionsY["select_class"],
             width=200.0,
             height=50.0
         )
 
-        canvas.create_text(
 
-            1270.0,
-            294.0,
-            anchor="nw",
-            text="class",
-            fill="#000000",
-            font=("Inter Medium", 18 * -1)
-        )
-
-        canvas.create_text(
-
-            108.0,
-            384.0,
-            anchor="nw",
-            text="Student 2",
-            fill="#000000",
-            font=("Roboto", 28 * -1)
-        )
-
-        global entry_image_2
-        entry_image_2 = PhotoImage(
-            file=relative_to_assets("entry_2.png"))
-        entry_bg_2 = canvas.create_image(
-            720.0,
-            398.0,
-            image=entry_image_2
-        )
-        entry_2 = Text(
+        globals()[f"delete_button{self.noOfStudents}"] = Button(
             self,
-            bd=0,
-            bg="#FFFFFF",
-            highlightthickness=1
-        )
-        entry_2.place(
-            x=275.0,
-            y=373.0,
-            width=890.0,
-            height=48.0
-        )
-
-        global button_image_4
-        button_image_4 = PhotoImage(
-            file=relative_to_assets("dropDown.png"))
-        button_4 = Button(
-            self,
-            image=button_image_4,
-            borderwidth=0,
+            # image=deleteButtonImage,
+            borderwidth=1,
+            text= "X",
+            bg= "red",
+            fg= "white",
             highlightthickness=0,
-            command=lambda: print("button_4 clicked"),
-            relief="flat"
+            command= lambda: deleteButtons(self),
+            font=("Roboto", 25 * -1)
+
         )
-        button_4.place(
-            x=1191.0,
-            y=373.0,
-            width=200.0,
+        globals()[f"delete_button{self.noOfStudents}"].place(
+            x=1200.0,
+            y=self.mostFieldDimensionsY["delete_button"],
+            width=50.0,
             height=50.0
         )
 
-        canvas.create_text(
+        self.mostFieldDimensionsY["student_count"] += 97
+        self.mostFieldDimensionsY["entry_name"] += 97
+        self.mostFieldDimensionsY["select_class"] += 97
+        self.mostFieldDimensionsY["delete_button"] += 97
+        self.mostFieldDimensionsY["addNewStudent"] += 97
 
-            1270.0,
-            391.0,
-            anchor="nw",
-            text="class",
-            fill="#000000",
-            font=("Inter Medium", 18 * -1)
-        )
+    global deleteButtons
+    def deleteButtons(self):
+        globals()[f"entry_name{self.noOfStudents}"].place_forget()
+        globals()[f"select_class_dropdown{self.noOfStudents}"].place_forget()
+
+
+
+
+
+
+
+
+
+
+
+
+

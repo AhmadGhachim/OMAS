@@ -10,7 +10,7 @@ sys.path.append("../backend")
 # Explicit imports to satisfy Flake8
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage, OptionMenu, Toplevel, Frame
 from tkinter import filedialog
-from PIL import Image, ImageTk
+#from PIL import Image, ImageTk
 
 import backend.DataProcessor
 from backend.DataProcessor import DataProcessor

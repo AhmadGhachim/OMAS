@@ -17,6 +17,7 @@ from PIL import Image, ImageTk
 import DataProcessor
 import NewStudent
 
+
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH = OUTPUT_PATH / Path("./assets")
 
@@ -256,6 +257,7 @@ class HomeScreen(Frame):
             if None in [meeting_file, cut_off, service_type]:
                 tkinter.messagebox.showerror(title="warning", message="Not all details provided")
             else:
+
                 print(service_type)
                 dp = DataProcessor.DataProcessor(path + "/backend/Excel files/CMPT 370.xlsx", meeting_file, service_type, 45, cut_off)
                 dp.output_to_workbook()

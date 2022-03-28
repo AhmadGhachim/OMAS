@@ -10,8 +10,11 @@ from tkinter import messagebox
 import sys
 
 sys.path.append("../backend")
+sys.path.append("../Test files")
 
-from WorkbookInitializer import workbook_initializer
+# from WorkbookInitializer import workbook_initializer
+import WorkbookInitializer
+
 
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH = OUTPUT_PATH / Path("./assets")
@@ -113,7 +116,7 @@ class InitializeExcelDatabases(Frame):
                     messagebox.showerror(title="warning", message="You are required to fill out every field")
                     return
                 
-                workbook_initializer(globals()[f"class_name_entry{i+1}"].get(), (globals()[f"start_month{i+1}"].get(), globals()[f"end_month{i+1}"].get()), globals()[f"filename{i+1}"])
+                WorkbookInitializer.workbook_initializer(globals()[f"class_name_entry{i+1}"].get(), (globals()[f"start_month{i+1}"].get(), globals()[f"end_month{i+1}"].get()), globals()[f"filename{i+1}"])
 
                 globals()[f"class_name_entry{i+1}"].delete(0, END)
                 globals()[f"start_month{i+1}"].set("Select class start period")
@@ -221,7 +224,6 @@ class InitializeExcelDatabases(Frame):
                 self,
                 globals()[f"start_month{self.noOfClasses}"],
                 *month_Options,
-                # command=lambda: print("button_4 clicked"),
             )
             globals()[f"start_month_dropdown{self.noOfClasses}"].place(
                 x=628.0,
@@ -235,7 +237,6 @@ class InitializeExcelDatabases(Frame):
                 self,
                 globals()[f"end_month{self.noOfClasses}"],
                 *month_Options,
-                # command=lambda: print("button_4 clicked"),
             )
             globals()[f"end_month_dropdown{self.noOfClasses}"].place(
                 x=860.0,

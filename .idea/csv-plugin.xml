@@ -24,10 +24,10 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="/backend/Test files/zoom_meet_file2 .csv">
+        <entry key="/backend/Test files/zoom_meet_file2.csv">
           <value>
             <Attribute>
-              <option name="separator" value="," />
+              <option name="separator" value="&#9;" />
             </Attribute>
           </value>
         </entry>

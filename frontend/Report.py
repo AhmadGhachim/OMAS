@@ -1,5 +1,4 @@
-
-
+import tkinter
 from pathlib import Path
 
 # from tkinter import *
@@ -78,12 +77,11 @@ class Report(Frame):
         )
 
         # create 'view record' button
-        global viewRecord_button_image
-        viewRecord_button_image = PhotoImage(
-            file=relative_to_assets("viewRecord.png"))
+
+        value_inside_class = tkinter.StringVar(self)
+        value_inside_class.set("Select an Option")
         viewRecord_button = Button(
             self,
-            image=viewRecord_button_image,
             borderwidth=0,
             highlightthickness=0,
             command=lambda: print("viewRecord_button clicked"),

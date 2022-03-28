@@ -1,4 +1,5 @@
-
+import os
+import tkinter
 from pathlib import Path
 
 # from tkinter import *
@@ -9,6 +10,8 @@ import HomeScreen
 
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH = OUTPUT_PATH / Path("./assets")
+path = os.path.abspath(os.path.pardir)
+path = path.replace("\\", "/", path.count("\\"))
 
 
 def relative_to_assets(path: str) -> Path:
@@ -73,23 +76,25 @@ class ViewRecord(Frame):
             width=125.0,
             height=50.0
         )
-        global button_image_3
-        button_image_3 = PhotoImage(
-            file=relative_to_assets("recordDropDown.png"))
-        button_3 = Button(
+        value_inside_record = tkinter.StringVar(self)
+        value_inside_record.set("Select an Option")
+        try:
+            class_options= [files[:-5] for files in os.listdir(path+"/backend/Excel files") if files[-5:] == ".xlsx"]
+        except FileNotFoundError:
+            class_options = [None]
+
+        viewRecord_button = tkinter.OptionMenu(
             self,
-            image=button_image_3,
-            borderwidth=0,
-            highlightthickness=0,
-            command=lambda: print("button_3 clicked"),
-            relief="flat"
+            value_inside_record,
+            *class_options,
         )
-        button_3.place(
-            x=442.0,
-            y=199.0,
-            width=374.0,
-            height=50.0
-        )
+
+        viewRecord_button.place(
+                x=442.0,
+                y=199.0,
+                width=374.0,
+                height=50.0
+            )
         global button_image_4
         button_image_4 = PhotoImage(
             file=relative_to_assets("monthAnalysis.png"))

@@ -6,6 +6,8 @@ from pathlib import Path
 # Explicit imports to satisfy Flake8
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage, Frame
 
+from numpy.ma.mrecords import openfile
+
 import HomeScreen
 
 OUTPUT_PATH = Path(__file__).parent
@@ -42,23 +44,7 @@ class ViewRecord(Frame):
             fill="#000000",
             font=("Inter Medium", 36 * -1)
         )
-        global button_image_1
-        button_image_1 = PhotoImage(
-            file=relative_to_assets("openRecord.png"))
-        button_1 = Button(
-            self,
-            image=button_image_1,
-            borderwidth=0,
-            highlightthickness=0,
-            command=lambda: print("button_1 clicked"),
-            relief="flat"
-        )
-        button_1.place(
-            x=859.0,
-            y=199.0,
-            width=200.0,
-            height=50.0
-        )
+
         global button_image_2
         button_image_2 = PhotoImage(
             file=relative_to_assets("goBack.png"))
@@ -83,18 +69,38 @@ class ViewRecord(Frame):
         except FileNotFoundError:
             class_options = [None]
 
-        viewRecord_button = tkinter.OptionMenu(
+        viewRecord= tkinter.OptionMenu(
             self,
             value_inside_record,
             *class_options,
         )
 
-        viewRecord_button.place(
+
+        viewRecord.place(
                 x=442.0,
                 y=199.0,
                 width=374.0,
                 height=50.0
             )
+
+        global button_image_1
+        button_image_1 = PhotoImage(
+            file=relative_to_assets("openRecord.png"))
+        button_1 = Button(
+            self,
+            image=button_image_1,
+            borderwidth=0,
+            highlightthickness=0,
+            command=lambda: os.system(path + "/backend/Excel files/"+value_inside_record.get()+".xlsx"),
+            relief="flat"
+        )
+        button_1.place(
+            x=859.0,
+            y=199.0,
+            width=200.0,
+            height=50.0
+        )
+
         global button_image_4
         button_image_4 = PhotoImage(
             file=relative_to_assets("monthAnalysis.png"))

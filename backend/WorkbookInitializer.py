@@ -26,13 +26,27 @@ def workbook_initializer(class_name: str, start_end_month: tuple, class_list_pat
     else:
         months = original_months[original_months.index(start_end_month[0]):original_months.index(start_end_month[1]) + 1]
 
-
-    class_list = open(class_list_path, 'r')
-
     class_list_copy = list()
-    for name in class_list:
-        name = name.strip()
-        class_list_copy.append(name)
+
+    print(class_list_path)
+
+    try:
+        with open(class_list_path, encoding="utf-8", errors="strict") as f:
+            class_list = f.read()
+            class_list = list(filter(None, class_list.split("\n")))
+            for name in class_list:
+                print(name)
+                name = name.strip()
+                class_list_copy.append(name)
+    except:
+        with open(class_list_path, encoding="utf-16", errors="strict") as f:
+            class_list = f.read()
+            class_list = list(filter(None, class_list.split("\n")))
+            for name in class_list:
+                print(name)
+                name = name.strip()
+                class_list_copy.append(name)
+
 
     wb = openpyxl.Workbook()
     wb.active.title = months[0]

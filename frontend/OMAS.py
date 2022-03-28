@@ -1,7 +1,11 @@
+import os
 import tkinter as tk
 
 from HomeScreen import HomeScreen
+from frontend.InitialzeExcelDatabases import InitializeExcelDatabases
 
+path = os.path.abspath(os.path.pardir)
+path = path.replace("\\", "/", path.count("\\"))
 
 class OMAS(tk.Tk):
     def __init__(self):
@@ -9,7 +13,11 @@ class OMAS(tk.Tk):
         self.geometry("1500x1000")
         self.title("OMAS")
         self._frame = None
-        self.switch_frame(HomeScreen)
+        if "Excel files" in os.listdir(path+"/backend"):
+            self.switch_frame(HomeScreen)
+        else:
+            self.switch_frame(InitializeExcelDatabases)
+            tk.messagebox.showinfo(title="Welcome!",message="Please start by providing details of the classes you are mentoring")
         # self.bind_all("<Button-1>", lambda event: event.widget.focus_set())
 
     def switch_frame(self, frame_class):

@@ -1,3 +1,5 @@
+import os
+import tkinter
 from pathlib import Path
 
 # from tkinter import *
@@ -18,6 +20,14 @@ class NewStudent(Frame):
 
     def __init__(self, master):
         Frame.__init__(self, master)
+
+        path = (os.path.abspath(os.path.pardir))
+        path = path.replace("\\", "/", path.count("\\"))
+        try:
+            # TODO: Classes for the dropdown menu
+            classes = [file[0:-5] for file in os.listdir(path + "/backend/Excel files") if file[-5:] == ".xlsx"]
+        except FileNotFoundError:
+            tkinter.messagebox.showerror(title="Error", message="Please run 'Initialize Excel Databases' first")
 
         canvas = Canvas(
             self,

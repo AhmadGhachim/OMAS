@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a31ab06-8605-468e-b66b-8bd913b043b7" name="Changes" comment="Added logic to fetch options for 'Class Name' droplist" />
+    <list default="true" id="0a31ab06-8605-468e-b66b-8bd913b043b7" name="Changes" comment="Added logic to fetch options for 'Class Name' droplist">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/Excel files/4B.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/Excel files/CMPT370.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/WorkbookInitializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/WorkbookInitializer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/HomeScreen.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/HomeScreen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/InitialzeExcelDatabases.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/InitialzeExcelDatabases.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/NewStudent.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/NewStudent.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/OMAS.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/OMAS.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/Reports/CMPT 370 report.txt" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -231,12 +242,12 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.main" />
       <item itemvalue="Python.HomeScreen" />
       <item itemvalue="Python.Main" />
       <item itemvalue="Python.OMAS" />
       <item itemvalue="Python.Report" />
       <item itemvalue="Python.WorkbookInitializer" />
-      <item itemvalue="Python.main" />
     </list>
     <recent_temporary>
       <list>
@@ -374,10 +385,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Added button position logic to InitialzeExcelDatabases.py" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/370_Repo$Main.coverage" NAME="Main Coverage Results" MODIFIED="1648421039759" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
+    <SUITE FILE_PATH="coverage/370_Repo$Main.coverage" NAME="Main Coverage Results" MODIFIED="1648442048288" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
     <SUITE FILE_PATH="coverage/370_Repo$App.coverage" NAME="App Coverage Results" MODIFIED="1647985234258" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/frontend" />
     <SUITE FILE_PATH="coverage/370_Repo$OMAS__1_.coverage" NAME="OMAS (1) Coverage Results" MODIFIED="1648155566108" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/frontend" />
-    <SUITE FILE_PATH="coverage/370_Repo$OMAS.coverage" NAME="OMAS Coverage Results" MODIFIED="1648436484789" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/frontend" />
+    <SUITE FILE_PATH="coverage/370_Repo$OMAS.coverage" NAME="OMAS Coverage Results" MODIFIED="1648445322566" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/frontend" />
     <SUITE FILE_PATH="coverage/home_py$HomeScreen.coverage" NAME="HomeScreen Coverage Results" MODIFIED="1648252669430" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/frontend" />
     <SUITE FILE_PATH="coverage/370_Repo$WorkbookInitializer__1_.coverage" NAME="WorkbookInitializer (1) Coverage Results" MODIFIED="1647909207770" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend/logic" />
     <SUITE FILE_PATH="coverage/370_Repo$home__1_.coverage" NAME="home (1) Coverage Results" MODIFIED="1648139250041" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/frontend" />

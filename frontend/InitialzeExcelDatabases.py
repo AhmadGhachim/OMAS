@@ -117,7 +117,7 @@ class InitializeExcelDatabases(Frame):
                     messagebox.showerror(title="warning", message="You are required to fill out every field")
                     return
                 
-                workbook_initializer(globals()[f"class_name_entry{i+1}"].get(), (globals()[f"start_month{i+1}"].get(), globals()[f"end_month{i+1}"].get()), globals()[f"filename{i+1}"])
+                WorkbookInitializer.workbook_initializer(globals()[f"class_name_entry{i+1}"].get(), (globals()[f"start_month{i+1}"].get(), globals()[f"end_month{i+1}"].get()), globals()[f"filename{i+1}"])
 
                 globals()[f"class_name_entry{i+1}"].delete(0, END)
                 globals()[f"start_month{i+1}"].set("Select class start period")
@@ -165,7 +165,7 @@ class InitializeExcelDatabases(Frame):
 
             # to upload class list
             def UploadAction():
-                globals()[f"filename{self.noOfClasses}"] = filedialog.askopenfilename()
+                globals()[f"filename{self.noOfClasses}"] = filedialog.askopenfilename(filetypes=[('Text files', '*txt')])
                 if globals()[f"filename{self.noOfClasses}"] and globals()[f"uploadList_button{self.noOfClasses}"]:
                     print('Selected:', globals()[f"filename{self.noOfClasses}"])
                     globals()[f"uploadList_button{self.noOfClasses}"].configure(text=globals()[f"filename{self.noOfClasses}"].split("/")[-1])

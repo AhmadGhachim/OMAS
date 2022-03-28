@@ -7,6 +7,9 @@ import sys
 import ViewRecord
 
 sys.path.append("../backend")
+import DataProcessor
+
+from InitialzeExcelDatabases import InitializeExcelDatabases
 
 # from tkinter import *
 # Explicit imports to satisfy Flake8
@@ -14,7 +17,6 @@ from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage, OptionMenu, Top
 from tkinter import filedialog
 from PIL import Image, ImageTk
 
-import DataProcessor
 import NewStudent
 
 
@@ -157,9 +159,8 @@ class HomeScreen(Frame):
 
 
         def UploadAction(event=None):
-            filename = filedialog.askopenfilename()
+            filename = filedialog.askopenfilename(filetypes=[('Meeting files', '*csv')])
             if filename:
-                print('Selected:', filename)
                 self.filename = filename
                 uploadButtonImage.configure(file=relative_to_assets("check-mark-button_2705.png"))
 
@@ -207,8 +208,7 @@ class HomeScreen(Frame):
             height=79.0
         )
 
-        # import the InitializeExcelDatabases class
-        from InitialzeExcelDatabases import InitializeExcelDatabases
+
 
         global excelDatabaseNav_Image
         excelDatabaseNav_Image = PhotoImage(
@@ -283,7 +283,7 @@ class HomeScreen(Frame):
                     tkinter.messagebox.showerror(title="Warning", message="Not all details provided")
                 else:
                     print(service_type)
-                    dp = DataProcessor(path + "/backend/Excel files/"+ class_name +".xlsx", meeting_file, service_type, duration, cut_off)
+                    dp = DataProcessor.DataProcessor(path + "/backend/Excel files/"+ class_name +".xlsx", meeting_file, service_type, duration, cut_off)
                     dp.output_to_workbook()
                     dp.output_to_text_file()
                     dp.output_to_console()

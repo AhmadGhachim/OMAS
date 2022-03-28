@@ -3,7 +3,7 @@
 import os
 import random
 
-from WorkbookInitializer import workbook_initializer
+from WorkbookInitializer import workbook_initializer, add_student
 from DataProcessor import DataProcessor
 
 
@@ -43,3 +43,4 @@ for x in directory:
     dp.output_to_text_file()
     dp.output_to_console()
 
+add_student("CMPT 370", "Josh Klinghoffer")

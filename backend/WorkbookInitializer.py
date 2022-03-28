@@ -13,7 +13,6 @@ def workbook_initializer(class_name: str, start_end_month: tuple, class_list_pat
     :param class_name: string representing name of the class
     :param start_end_month: tuple containing course duration (start_month: str, end_month: str)
     :param class_list_path: path to class list (text file containing names of students)
-    :return: None
     """
     original_months = ['January', 'February', 'March', 'April', 'May', 'June',
                        'July', 'August', 'September', 'October', 'November', 'December']
@@ -26,13 +25,24 @@ def workbook_initializer(class_name: str, start_end_month: tuple, class_list_pat
     else:
         months = original_months[original_months.index(start_end_month[0]):original_months.index(start_end_month[1]) + 1]
 
-
-    class_list = open(class_list_path, 'r')
-
     class_list_copy = list()
-    for name in class_list:
-        name = name.strip()
-        class_list_copy.append(name)
+
+    try:
+        with open(class_list_path, encoding="utf-8", errors="strict") as f:
+            class_list = f.read()
+            class_list = list(filter(None, class_list.split("\n")))
+            for name in class_list:
+                name = name.strip()
+                class_list_copy.append(name)
+    except UnicodeError:
+        with open(class_list_path, encoding="utf-16", errors="strict") as f:
+            class_list = f.read()
+            class_list = list(filter(None, class_list.split("\n")))
+            for name in class_list:
+                name = name.strip()
+                class_list_copy.append(name)
+
+    class_list_copy.sort()
 
     wb = openpyxl.Workbook()
     wb.active.title = months[0]
@@ -57,8 +67,35 @@ def workbook_initializer(class_name: str, start_end_month: tuple, class_list_pat
         wb.save(path + "/backend/Excel files/" + class_name + ".xlsx")
 
 def add_student(class_name: str, student_name: str):
-    # TODO: I have it implemented, just need to change variables
-    pass
+    """
+    Adds a new student entry to the attendance database
+    :param class_name: string representing the name of the class
+    :param student_name: string representing the name of the student
+    """
+    student_name = student_name.upper()
+    names = list()
+    wb = openpyxl.load_workbook(path + "/backend/Excel files/" + class_name + ".xlsx")  # Open class workbook
+    active_sheet = wb._active_sheet_index
+    for x in range(len(wb.sheetnames)):
+        wb._active_sheet_index = x
+        sheet = wb.active
+        # Create a list of student names ('names') from the workbook
+        row_count = 2
+        cell_data = sheet.cell(row_count, 1).value
+        while cell_data is not None:
+            names.append(str(cell_data).upper())
+            row_count += 1
+            cell_data = sheet.cell(row_count, 1).value
+
+        index = 0
+        while min(names[index], student_name) != student_name:
+            index += 1
+
+        sheet.insert_rows(index + 2, 1)
+        sheet.cell(index + 2, 1).value = student_name
+    wb._active_sheet_index = active_sheet
+    wb.save(path + "/backend/Excel files/" + class_name + ".xlsx")
+    wb.close()
 
 if __name__ == '__main__':
     print("Testing WorkbookInitializer")
@@ -69,7 +106,6 @@ if __name__ == '__main__':
 
     print("\tRunning function...")
     for class_name_item, start_end, class_list_item in zip(test_classes, test_start_end_months, test_class_lists):
-        print(class_name_item, start_end, class_list_item)
         workbook_initializer(class_name_item, start_end, class_list_item)
 
     print("\tFiles created successfully. Verifying workbook format...")
@@ -87,6 +123,7 @@ if __name__ == '__main__':
     print("\tDeleting test workbooks...")
     for class_name_item in test_classes:
         os.remove("Excel files/" + class_name_item +".xlsx")
+    os.removedirs("Excel files")
 
     print("** End of testing **")
 

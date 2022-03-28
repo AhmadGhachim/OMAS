@@ -10,7 +10,7 @@ path = path.replace("\\", "/", path.count("\\"))
 class OMAS(tk.Tk):
     def __init__(self):
         tk.Tk.__init__(self)
-        self.geometry("1500x1000")
+        self.geometry("1350x900")
         self.title("OMAS")
         self._frame = None
         if "Excel files" in os.listdir(path+"/backend"):
@@ -26,7 +26,7 @@ class OMAS(tk.Tk):
         if self._frame is not None:
             self._frame.destroy()
         self._frame = new_frame
-        self._frame.place(x=0, y=0, width="1500", height="1000")
+        self._frame.place(x=0, y=0, width="1350", height="900")
 
 
 if __name__ == "__main__":

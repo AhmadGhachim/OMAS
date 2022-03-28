@@ -91,7 +91,7 @@ class ViewRecord(Frame):
             image=button_image_1,
             borderwidth=0,
             highlightthickness=0,
-            command=lambda: os.system(path + "/backend/Excel files/"+value_inside_record.get()+".xlsx"),
+            command=lambda: os.startfile(path + "/backend/Excel files/"+value_inside_record.get()+".xlsx"),
             relief="flat"
         )
         button_1.place(
@@ -113,8 +113,8 @@ class ViewRecord(Frame):
             relief="flat"
         )
         button_4.place(
-            x=172.0,
-            y=833.0,
+            x=500.0,
+            y=700.0,
             width=200.0,
             height=79.0
         )
@@ -130,42 +130,10 @@ class ViewRecord(Frame):
             relief="flat"
         )
         button_5.place(
-            x=491.0,
-            y=833.0,
+            x=760.0,
+            y=700.0,
             width=200.0,
             height=79.0
         )
-        global button_image_6
-        button_image_6 = PhotoImage(
-            file=relative_to_assets("studentAnalysisMonth.png"))
-        button_6 = Button(
-            self,
-            image=button_image_6,
-            borderwidth=0,
-            highlightthickness=0,
-            command=lambda: print("button_6 clicked"),
-            relief="flat"
-        )
-        button_6.place(
-            x=810.0,
-            y=833.0,
-            width=200.0,
-            height=79.0
-        )
-        global button_image_7
-        button_image_7 = PhotoImage(
-            file=relative_to_assets("studentAnalysisDur.png"))
-        button_7 = Button(
-            self,
-            image=button_image_7,
-            borderwidth=0,
-            highlightthickness=0,
-            command=lambda: print("button_7 clicked"),
-            relief="flat"
-        )
-        button_7.place(
-            x=1129.0,
-            y=833.0,
-            width=200.0,
-            height=79.0
-        )
+
+

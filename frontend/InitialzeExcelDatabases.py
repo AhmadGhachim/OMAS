@@ -82,7 +82,7 @@ class InitializeExcelDatabases(Frame):
         iterator_wb = 0
 
         canvas.create_text(
-            525.0,
+            500.0,
             109.0,
             anchor="nw",
             text="Initialize Excel Databases",
@@ -104,7 +104,7 @@ class InitializeExcelDatabases(Frame):
             relief="flat"
         )
         addNewClass_button.place(
-            x=650.0,
+            x=595.0,
             y=self.mostFieldDimensionsY["addNewClass"],
             width=200.0,
             height=50.0
@@ -125,7 +125,7 @@ class InitializeExcelDatabases(Frame):
             relief="flat"
         )
         goBack_button.place(
-            x=109.0,
+            x=80.0,
             y=89.0,
             width=125.0,
             height=50.0
@@ -188,7 +188,7 @@ class InitializeExcelDatabases(Frame):
             relief="flat"
         )
         process_button.place(
-            x=634.0,
+            x=580.0,
             y=800.0,
             width=233.0,
             height=79.0
@@ -203,7 +203,7 @@ class InitializeExcelDatabases(Frame):
         #     return
 
         if self.noOfClasses >= 1:
-            addNewClass_button.place_configure(x=650, y=self.mostFieldDimensionsY["addNewClass"])
+            addNewClass_button.place_configure(x=595, y=self.mostFieldDimensionsY["addNewClass"])
 
         self.noOfClasses += 1
 
@@ -240,7 +240,7 @@ class InitializeExcelDatabases(Frame):
         globals()[f"uploadList_button{iterator_wb}"].configure(command=lambda: UploadAction(self.upload_txt_file_buttons.index(temp_upload)))
 
         globals()[f"uploadList_button{iterator_wb}"].place(
-            x=1092.0,
+            x=920.0,
             y=self.mostFieldDimensionsY["uploadClassList"],
             width=300.0,
             height=50.0
@@ -249,7 +249,7 @@ class InitializeExcelDatabases(Frame):
 
         side_text_wb.append(
             canvas.create_text(
-            109.0,
+            80.0,
             self.mostFieldDimensionsY["canvas_text"],
             anchor="nw",
             text="Class " + str(len(class_fields)),
@@ -268,7 +268,7 @@ class InitializeExcelDatabases(Frame):
             font=("Roboto", 20 * -1)
         )
         globals()[f"class_name_entry{iterator_wb}"].place(
-            x=276.0,
+            x=180.0,
             y=self.mostFieldDimensionsY["entry_text"],
             width=320.0,
             height=48.0
@@ -288,7 +288,7 @@ class InitializeExcelDatabases(Frame):
             # command=lambda: print("button_4 clicked"),
         )
         globals()[f"start_month_dropdown{iterator_wb}"].place(
-            x=628.0,
+            x=510.0,
             y=self.mostFieldDimensionsY["start_month"],
             width=200.0,
             height=50.0
@@ -302,7 +302,7 @@ class InitializeExcelDatabases(Frame):
             # command=lambda: print("button_4 clicked"),
         )
         globals()[f"end_month_dropdown{iterator_wb}"].place(
-            x=860.0,
+            x=710.0,
             y=self.mostFieldDimensionsY["start_month"],
             width=200.0,
             height=50.0
@@ -324,7 +324,7 @@ class InitializeExcelDatabases(Frame):
         globals()[f"delete_workbook_buttons{iterator_wb}"].configure(command=lambda: deleteWorkbookButtons(self, self.delete_workbook_buttons.index(temp_button)))
 
         globals()[f"delete_workbook_buttons{iterator_wb}"].place(
-            x=1400.0,
+            x=1250.0,
             y=self.mostFieldDimensionsY["deleteWorkbook"],
             width=50.0,
             height=50.0

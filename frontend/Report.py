@@ -24,7 +24,7 @@ class Report(Frame):
         canvas = Canvas(
             self,
             bg = "#FFFFFF",
-            height = 1000,
+            height = 800,
             width = 1500,
             bd = 0,
             highlightthickness = 0,

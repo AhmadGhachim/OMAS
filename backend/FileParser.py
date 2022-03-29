@@ -1,27 +1,27 @@
 import os
 
+from backend.MathFunctions import am_pm_to_24_hours
+
 path = os.path.abspath(os.path.pardir)
 path = path.replace("\\", "/", path.count("\\"))
 
-
 class FileParser(object):
-    def __init__(self, path: str):
-        self.file_path = path  # path to the .csv file
+    def __init__(self, file_path: str):
+        self.file_path = file_path
         self.data = list()
+
         self.start_time = None  # Meeting start time. Format -> 00:34:12
         self.date = None  # Meeting start date. Format -> 05/01/22
 
+        self.leave_time = None  # Meeting leave time. Format -> 00:34:12
+
     def parse_for_teams(self):
-        """
-        Parses data from the given meeting report file and stores it in 'data'
-        :return: None
-        """
         f = open(self.file_path, "r")
         try:  # copy data into python list
             for y in f:
                 y = y.strip()
                 y = y.split("\t")
-                y[0] = y[0].upper()
+
                 try:
                     y[2] = y[2].split(", ")
                     y[2] = {'date': y[2][0], 'time': y[2][1]}
@@ -37,13 +37,47 @@ class FileParser(object):
         f.close()
 
         self.data = self.data[1:]  # take out header (first element) of the list
+
         self.date = self.data[0][2]['date']
         self.start_time = self.data[0][2]['time']
-        self.data = self.data[1:]
 
-    # To be implemented
     def parse_for_zoom(self):
-        pass
+
+      #  self.leave_time = None  # Meeting start time. Format -> 00:34:12
+      #  self.leave_date = None  # Meeting start date. Format -> 05/01/22
+        f = open(self.file_path, "r")
+        data = list()
+        # copy data into python list
+        for y in f:
+            y = y.strip()
+            y = y.split("\t")
+            data.append(y)
+
+        data = data[1:]
+
+        for y in data:
+            y[3] = y[3].split(" ")
+            join = dict()
+            join["date"] = y[3][0]
+            join["time"] = am_pm_to_24_hours(" ".join(y[3][1:]))
+
+            y[4] = y[4].split(" ")
+            leave = dict()
+            leave["date"] = y[4][0]
+            leave["time"] = am_pm_to_24_hours(" ".join(y[4][1:]))
+
+            self.data.append([y[0], "Joined", join.copy()].copy())
+            self.data.append([y[0], "Left", leave.copy()].copy())
+
+
+        f.close()
+
+        self.date = self.data[0][2]['date']
+
+        self.start_time = self.data[0][2]['time']
+        self.leave_time = self.data[1][2]['time']
+
+        self.data = self.data[2:]
 
     def parse_for_webex(self):
         pass
@@ -62,6 +96,14 @@ class FileParser(object):
 
 
 if __name__ == '__main__':
-    fp = FileParser(path + "Project\Test files\meet_file11.csv")
-    fp.parse_for_teams()
-    fp.__output__()
+   fp0 = FileParser(path + "/backend/Test files/zoom_meet_file1.csv")
+   fp0.parse_for_zoom()
+   fp0.__output__()
+
+   fp = FileParser(path + "/backend/Test files/zoom_meet_file2.csv")
+   fp.parse_for_zoom()
+   fp.__output__()
+
+   fp1 = FileParser(path + "/backend/Attendance files/CMPT 370.csv")
+   fp1.parse_for_teams()
+   fp1.__output__()

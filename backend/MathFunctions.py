@@ -34,3 +34,24 @@ def total_duration(list_of_timestamps):
     for x in range(0, len(list_of_timestamps), 2):
         time_duration += duration(list_of_timestamps[x], list_of_timestamps[x + 1])
     return time_duration
+
+def am_pm_to_24_hours(timestamp):
+    """
+    Convert a timestamp from 12-hour format to 24-hour format.
+    :param timestamp: a string representing a timestamp (containing AM or PM) (Ex. 02:30:45 PM)
+    :return: a string representing 24-hour timestamp (Ex. 14:30:45)
+    """
+    timestamp = timestamp.split(' ')
+    if timestamp[1] == 'AM':
+        return timestamp[0]
+    timestamp = timestamp[0].split(":")
+    if timestamp[0] == "12":
+        timestamp[0] = "00"
+    else:
+        timestamp[0] = str(int(timestamp[0])+12)
+    return ":".join(timestamp)
+
+if __name__ == '__main__':
+    print(am_pm_to_24_hours("12:30:45 PM"))
+    print(am_pm_to_24_hours("10:12:21 AM"))
+    print(am_pm_to_24_hours("08:34:56 PM"))

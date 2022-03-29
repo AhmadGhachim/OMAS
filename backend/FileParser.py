@@ -22,6 +22,7 @@ class FileParser(object):
                 y = y.strip()
                 y = y.split("\t")
 
+                y[0] = y[0].upper()
                 try:
                     y[2] = y[2].split(", ")
                     y[2] = {'date': y[2][0], 'time': y[2][1]}
@@ -40,6 +41,8 @@ class FileParser(object):
 
         self.date = self.data[0][2]['date']
         self.start_time = self.data[0][2]['time']
+
+        self.data = self.data[1:]
 
     def parse_for_zoom(self):
 
@@ -66,9 +69,8 @@ class FileParser(object):
             leave["date"] = y[4][0]
             leave["time"] = am_pm_to_24_hours(" ".join(y[4][1:]))
 
-            self.data.append([y[0], "Joined", join.copy()].copy())
-            self.data.append([y[0], "Left", leave.copy()].copy())
-
+            self.data.append([y[0].upper(), "Joined", join.copy()].copy())
+            self.data.append([y[0].upper(), "Left", leave.copy()].copy())
 
         f.close()
 

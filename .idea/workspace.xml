@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a31ab06-8605-468e-b66b-8bd913b043b7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/backend/Excel files/CMPT 370.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/InitialzeExcelDatabases.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/InitialzeExcelDatabases.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/OMAS.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/OMAS.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/Report.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/Report.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/ViewRecord.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/ViewRecord.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -361,7 +359,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648501058923</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="added open file to ViewRecord.py">
+      <created>1648507637642</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1648507637642</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -393,7 +398,8 @@
     <MESSAGE value="added navigation to ViewRecord.py" />
     <MESSAGE value="added drop down to ViewRecord.py" />
     <MESSAGE value="added open record to ViewRecord.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="added open record to ViewRecord.py" />
+    <MESSAGE value="added open file to ViewRecord.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="added open file to ViewRecord.py" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/370_Repo$report.coverage" NAME="report Coverage Results" MODIFIED="1648155419626" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/frontend" />
@@ -422,6 +428,6 @@
     <SUITE FILE_PATH="coverage/home_py$HomeScreen.coverage" NAME="HomeScreen Coverage Results" MODIFIED="1648252818296" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/frontend" />
     <SUITE FILE_PATH="coverage/370_Repo$Main.coverage" NAME="Main Coverage Results" MODIFIED="1647985350433" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
     <SUITE FILE_PATH="coverage/370_Repo$WorkbookInitializer.coverage" NAME="WorkbookInitializer Coverage Results" MODIFIED="1647216462466" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
-    <SUITE FILE_PATH="coverage/home_py$OMAS.coverage" NAME="OMAS Coverage Results" MODIFIED="1648506984620" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/frontend" />
+    <SUITE FILE_PATH="coverage/home_py$OMAS.coverage" NAME="OMAS Coverage Results" MODIFIED="1648515777156" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/frontend" />
   </component>
 </project>

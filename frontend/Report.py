@@ -32,7 +32,7 @@ class Report(Frame):
         canvas = Canvas(
             self,
             bg = "#FFFFFF",
-            height = 800,
+            height = 1000,
             width = 1500,
             bd = 0,
             highlightthickness = 0,
@@ -85,7 +85,7 @@ class Report(Frame):
         # add 'export' button to frame
         export_button.place(
             x=418.0,
-            y=833.0,
+            y=700.0,
             width=260.0,
             height=50.0
         )
@@ -94,8 +94,13 @@ class Report(Frame):
 
         value_inside_class = tkinter.StringVar(self)
         value_inside_class.set("Select an Option")
+
+        global view_record_image
+        view_record_image = PhotoImage(
+            file=relative_to_assets("viewRecord.png"))
         viewRecord_button = Button(
             self,
+            image = view_record_image,
             borderwidth=0,
             highlightthickness=0,
             command=lambda: os.startfile(path+"/backend/Excel files/" + class_name + ".xlsx"),
@@ -105,7 +110,7 @@ class Report(Frame):
         # add 'view record' button to frame
         viewRecord_button.place(
             x=823.0,
-            y=833.0,
+            y=700.0,
             width=260.0,
             height=50.0
         )
@@ -141,7 +146,7 @@ class Report(Frame):
 
         # write text on canvas
         canvas.create_text(
-            630.0,
+            550.0,
             114.0,
             anchor="nw",
             text="Report for " + class_name,

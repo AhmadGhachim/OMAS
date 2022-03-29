@@ -15,9 +15,9 @@ original_months = ['January', 'February', 'March', 'April', 'May', 'June',
                        'July', 'August', 'September', 'October', 'November', 'December']
 
 class DataProcessor(object):
-    def __init__(self, workbook_path: str, meeting_file_path: str, meeting_service: str, class_duration: int, cutoff: int = 0):
+    def __init__(self, class_name: str,workbook_path: str, meeting_file_path: str, meeting_service: str, class_duration: int, cutoff: int = 0):
         # Class details
-        self.__class_name = meeting_file_path.split('/')[-1].split('.')[0]
+        self.__class_name = class_name
         self.__class_duration = class_duration
         self.__class_list = list()
 
@@ -176,9 +176,9 @@ class DataProcessor(object):
         Method which writes processed data to an external .txt file under 'Reports' directory
         :return: None
         """
-        if "Reports" not in os.listdir():
-            os.mkdir("Reports")
-        report_file = open("Reports/" + self.__class_name + " report.txt", "w")
+        if "Reports" not in os.listdir(path + "/backend"):
+            os.mkdir(path + "/backend/Reports/")
+        report_file = open(path + "/backend/Reports/" + self.__class_name + " report.txt", "w")
         report_file.write("Report for " + self.__class_name + " (" + self.__file_parser.date + ")\n")
         report_file.write("\nPresent: " + str(len(self.__report["present"])) + "\n")
         counter = 1
@@ -237,3 +237,30 @@ class DataProcessor(object):
             print("\t" + str(counter) + ". " + self.__error_db[0][y] + " (replaced with " + self.__error_db[1][y] + ")")
             counter += 1
         print()
+
+    def __str__(self):
+        string = "Report for " + self.__class_name + " (" + self.__file_parser.date + ")\n\n"
+        string += "Present: " + str(len(self.__report["present"])) + "\n"
+        counter = 1
+        for y in self.__report['present']:
+            string += "\t" + str(counter) + ". " + y + " (time: " + str(abs(int(self.__duration_db[y])))+ " mins)\n"
+            counter += 1
+
+        string += "\nPartial (< " + str(self.__cutoff) + " mins): " + str(len(self.__report["partial"])) + "\n"
+        counter = 1
+        for y in self.__report['partial']:
+            string += "\t" + str(counter) + ". " + y + " (time: " + str(abs(int(self.__duration_db[y]))) + " mins)\n"
+            counter += 1
+
+        string += "\nAbsent: " + str(len(self.__report["absent"])) + "\n"
+        counter = 1
+        for y in self.__report['absent']:
+            string += "\t" + str(counter) + ". " + y + "\n"
+            counter += 1
+
+        string += "\nPotential Errors (spelling mistakes, etc.): " + str(len(self.__error_db[0])) + "\n"
+        counter = 1
+        for y in range(len(self.__error_db[0])):
+            string += "\t" + str(counter) + ". " + self.__error_db[0][y] + " (replaced with " + self.__error_db[1][y] + ")\n"
+            counter += 1
+        return string

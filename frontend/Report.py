@@ -1,19 +1,27 @@
+import os
 import tkinter
 from pathlib import Path
+import shutil
 
 # from tkinter import *
 # Explicit imports to satisfy Flake8
 from tkinter import BOTH, BOTTOM, END, LEFT, RIGHT, Y, Frame, Listbox, Scrollbar, Tk, Canvas, Entry, Text, Button, PhotoImage
+from tkinter.filedialog import asksaveasfilename
 from turtle import window_width
 
 
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH = OUTPUT_PATH / Path("./assets")
 
+path = os.path.abspath(os.path.pardir)
+path = path.replace("\\", "/", path.count("\\"))
 
 def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
 
+import HomeScreen
+
+dp = HomeScreen.dp
 
 class Report(Frame):
 
@@ -64,9 +72,15 @@ class Report(Frame):
             image=export_button_image,
             borderwidth=0,
             highlightthickness=0,
-            command=lambda: print("export_button clicked"),
+            command=lambda: export(),
             relief="flat"
         )
+
+        def export():
+            types = [('Text Document', '*.txt')]
+            file = asksaveasfilename(filetypes=types, defaultextension='*.txt')
+            shutil.copyfile(path + "/backend/Reports/" + class_name + " report.txt", file)
+            tkinter.messagebox.showinfo(title="Success", message="Report for " + class_name + " exported successfully.")
 
         # add 'export' button to frame
         export_button.place(
@@ -84,7 +98,7 @@ class Report(Frame):
             self,
             borderwidth=0,
             highlightthickness=0,
-            command=lambda: print("viewRecord_button clicked"),
+            command=lambda: os.startfile(path+"/backend/Excel files/" + class_name + ".xlsx"),
             relief="flat"
         )
 
@@ -95,6 +109,11 @@ class Report(Frame):
             width=260.0,
             height=50.0
         )
+
+        settings = open(path + "/backend/settings.txt", "r")
+        class_name = settings.read()
+        settings.close()
+        os.startfile(path + "/backend/Reports/" + class_name + " report.txt")
 
         # import HomeScreen class
         from HomeScreen import HomeScreen
@@ -125,7 +144,7 @@ class Report(Frame):
             630.0,
             114.0,
             anchor="nw",
-            text="Report for CMPT 370",
+            text="Report for " + class_name,
             fill="#000000",
             font=("Inter Medium", 36 * -1)
         )

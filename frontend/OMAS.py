@@ -1,4 +1,5 @@
 import os
+import shutil
 import tkinter as tk
 
 from HomeScreen import HomeScreen
@@ -31,4 +32,12 @@ class OMAS(tk.Tk):
 
 if __name__ == "__main__":
     app = OMAS()
+    def on_closing():
+        if tk.messagebox.askokcancel("Quit", "Do you want to quit?"):
+            try:
+                shutil.rmtree(path + "/backend/Reports")
+            except FileNotFoundError:
+                pass
+            app.destroy()
+    app.protocol("WM_DELETE_WINDOW", on_closing)
     app.mainloop()

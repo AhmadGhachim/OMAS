@@ -6,8 +6,6 @@ from pathlib import Path
 # Explicit imports to satisfy Flake8
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage, Frame
 
-from numpy.ma.mrecords import openfile
-
 import HomeScreen
 
 OUTPUT_PATH = Path(__file__).parent
@@ -135,5 +133,3 @@ class ViewRecord(Frame):
             width=200.0,
             height=79.0
         )
-
-

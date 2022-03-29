@@ -219,6 +219,7 @@ class InitializeExcelDatabases(Frame):
             if globals()[f"filename{button_num}"] and globals()[f"uploadList_button{button_num}"]:
                 print('Selected:', globals()[f"filename{button_num}"])
                 self.upload_txt_file_buttons[button_num].configure(text=globals()[f"filename{button_num}"].split("/")[-1])
+                globals()[f"class_name_entry{class_fields[button_num]}"].delete(0, END)
                 globals()[f"class_name_entry{class_fields[button_num]}"].insert(END, (globals()[f"filename{button_num}"].split("/")[-1][0:-4]))
         #####################################################
 

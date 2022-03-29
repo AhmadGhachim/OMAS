@@ -41,6 +41,6 @@ for x in directory:
     dp = DataProcessor(workbook_path, meeting_file_path, 'Teams', 50, 25)
     dp.output_to_workbook()
     dp.output_to_text_file()
-    dp.output_to_console()
+    print(dp)
 
 add_student("CMPT 370", "Josh Klinghoffer")
